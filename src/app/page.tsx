@@ -9,6 +9,7 @@ export default function Home() {
         minHeight: '100vh',
         background: 'linear-gradient(45deg, #ff00ff, #00ff00, #ffff00, #ff0000, #00ffff)',
         backgroundSize: '400% 400%',
+        animation: 'vomitBackground 15s ease infinite',
         fontFamily: 'Comic Sans MS, cursive',
         fontSize: '24px',
         fontWeight: 'bold',

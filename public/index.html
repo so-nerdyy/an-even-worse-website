@@ -16,16 +16,16 @@
             overflow-x: hidden;
             user-select: none;
             -webkit-user-select: none;
-            animation: vomitBackground 3s ease infinite, bodyShake 0.5s infinite;
+            animation: vomitBackground 15s ease infinite, bodyShake 0.5s infinite;
         }
 
         /* VOMIT-INDUCING BACKGROUND */
         @keyframes vomitBackground {
-            0% { background-position: 0% 50%; filter: hue-rotate(0deg) saturate(3) contrast(2); }
-            25% { background-position: 50% 100%; filter: hue-rotate(90deg) saturate(5) contrast(3); }
-            50% { background-position: 100% 50%; filter: hue-rotate(180deg) saturate(4) contrast(2.5); }
-            75% { background-position: 50% 0%; filter: hue-rotate(270deg) saturate(6) contrast(3); }
-            100% { background-position: 0% 50%; filter: hue-rotate(360deg) saturate(3) contrast(2); }
+            0% { background-position: 0% 50%; filter: hue-rotate(0deg) saturate(1.5) contrast(1.2); }
+            25% { background-position: 50% 100%; filter: hue-rotate(20deg) saturate(1.8) contrast(1.3); }
+            50% { background-position: 100% 50%; filter: hue-rotate(40deg) saturate(1.6) contrast(1.2); }
+            75% { background-position: 50% 0%; filter: hue-rotate(20deg) saturate(1.9) contrast(1.3); }
+            100% { background-position: 0% 50%; filter: hue-rotate(0deg) saturate(1.5) contrast(1.2); }
         }
         
         @keyframes bodyShake {
@@ -155,19 +155,19 @@
             align-items: center; justify-content: space-between;
             box-shadow: 0 0 30px rgba(255,0,255,0.8), 0 0 60px rgba(0,255,0,0.6);
             position: sticky; top: 0; z-index: 1000;
-            animation: navbarGlitch 0.3s infinite, navbarColorShift 2s infinite;
+            animation: navbarGlitch 5s infinite, navbarColorShift 10s infinite;
             border-bottom: 10px dotted #ff00ff;
         }
         @keyframes navbarGlitch {
             0%, 95%, 100% { transform: translate(0) skew(0deg); }
-            96% { transform: translate(-5px, 3px) skew(-5deg); }
-            97% { transform: translate(5px, -3px) skew(5deg); }
-            98% { transform: translate(-3px, 2px) skew(-3deg); }
+            96% { transform: translate(-2px, 1px) skew(-1deg); }
+            97% { transform: translate(2px, -1px) skew(1deg); }
+            98% { transform: translate(-1px, 1px) skew(-1deg); }
         }
         @keyframes navbarColorShift {
-            0% { filter: hue-rotate(0deg) saturate(5); }
-            50% { filter: hue-rotate(180deg) saturate(8); }
-            100% { filter: hue-rotate(360deg) saturate(5); }
+            0% { filter: hue-rotate(0deg) saturate(2); }
+            50% { filter: hue-rotate(30deg) saturate(3); }
+            100% { filter: hue-rotate(0deg) saturate(2); }
         }
         .navbar .logo {
             font-size: 28px; font-weight: bold;
@@ -230,8 +230,8 @@
             50% { transform: rotate(5deg) scale(1.1); }
         }
         @keyframes cardColorPulse {
-            0%, 100% { filter: hue-rotate(0deg) saturate(5) brightness(1.2); }
-            50% { filter: hue-rotate(180deg) saturate(8) brightness(1.5); }
+            0%, 100% { filter: hue-rotate(0deg) saturate(2) brightness(1.1); }
+            50% { filter: hue-rotate(20deg) saturate(2.5) brightness(1.2); }
         }
         .product-card:hover {
             transform: translateY(-10px) scale(1.2) rotate(10deg);
@@ -265,7 +265,7 @@
             cursor: none !important;
             border-radius: 0 0 12px 12px;
             transition: all 0.1s;
-            animation: buttonRainbow 2s linear infinite, buttonShake 0.3s infinite;
+            animation: buttonRainbow 10s linear infinite, buttonShake 0.3s infinite;
             text-shadow: 2px 2px 4px #000, -2px -2px 4px #fff;
             font-weight: bold;
         }
