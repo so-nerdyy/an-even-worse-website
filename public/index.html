@@ -1,0 +1,2606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤮 WORST WEBSITE EVER - PREPARE TO SUFFER 🤮</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Press+Start+2P&family=Creepster&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none !important; }
+
+        body {
+            font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+            background: linear-gradient(45deg, #ff00ff 0%, #00ff00 10%, #ffff00 20%, #ff0000 30%, #00ffff 40%, #ff00ff 50%, #00ff00 60%, #ffff00 70%, #ff0000 80%, #00ffff 90%, #ff00ff 100%);
+            background-size: 400% 400%;
+            overflow-x: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            animation: vomitBackground 3s ease infinite, bodyShake 0.5s infinite;
+        }
+
+        /* VOMIT-INDUCING BACKGROUND */
+        @keyframes vomitBackground {
+            0% { background-position: 0% 50%; filter: hue-rotate(0deg) saturate(3) contrast(2); }
+            25% { background-position: 50% 100%; filter: hue-rotate(90deg) saturate(5) contrast(3); }
+            50% { background-position: 100% 50%; filter: hue-rotate(180deg) saturate(4) contrast(2.5); }
+            75% { background-position: 50% 0%; filter: hue-rotate(270deg) saturate(6) contrast(3); }
+            100% { background-position: 0% 50%; filter: hue-rotate(360deg) saturate(3) contrast(2); }
+        }
+        
+        @keyframes bodyShake {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-2px, 2px) rotate(-0.5deg); }
+            50% { transform: translate(2px, -2px) rotate(0.5deg); }
+            75% { transform: translate(-2px, -2px) rotate(-0.5deg); }
+        }
+
+        /* CUSTOM CURSOR - slower, no blinking */
+        #fakeCursor {
+            position: fixed; width: 60px; height: 60px;
+            border: 4px solid magenta; border-radius: 50%;
+            pointer-events: none; z-index: 999999;
+            transition: left 0.07s linear, top 0.07s linear;
+            mix-blend-mode: difference; background: rgba(255,0,255,0.15);
+            animation: cursorSpin 4s linear infinite;
+        }
+        @keyframes cursorSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        #fakeCursorInner {
+            position: fixed; width: 12px; height: 12px;
+            background: cyan; border-radius: 50%;
+            pointer-events: none; z-index: 999998;
+            transition: left 0.12s linear, top 0.12s linear;
+        }
+        .mouse-trail-dot {
+            position: fixed; width: 8px; height: 8px;
+            background: #e94560; border-radius: 50%;
+            pointer-events: none; z-index: 999990;
+            opacity: 0.6; transition: opacity 0.5s;
+            box-shadow: 0 0 10px #e94560, 0 0 20px #e94560;
+        }
+
+        /* CHAOS OVERLAYS - slow, no seizure */
+        .chaos-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 999900;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(255,0,0,0.02),
+                rgba(255,0,0,0.02) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            animation: scanlines 3s infinite linear;
+        }
+        @keyframes scanlines { 0% { transform: translateY(0); } 100% { transform: translateY(4px); } }
+
+        .distortion-wave {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 999800;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), transparent 0%, rgba(255,255,0,0.1) 20%, transparent 40%);
+            animation: wavePulse 3s infinite ease-in-out;
+        }
+        @keyframes wavePulse { 0%, 100% { transform: scale(1); opacity: 0.3; } 50% { transform: scale(1.3); opacity: 0.6; } }
+
+        /* COOKIE BANNER - no flashing */
+        #cookieBanner {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: #1a1a2e; color: white; padding: 30px;
+            z-index: 100000; font-size: 14px; border-top: 4px solid #e94560;
+            animation: bannerWobble 4s infinite ease-in-out;
+        }
+        @keyframes bannerWobble { 0%, 100% { transform: translateX(0) rotate(0deg); } 25% { transform: translateX(-3px) rotate(-0.5deg); } 75% { transform: translateX(3px) rotate(0.5deg); } }
+        #cookieBanner h3 { margin-bottom: 10px; font-size: 18px; }
+        #cookieBanner .cookie-btns { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+        #cookieBanner button { padding: 10px 24px; border: none; border-radius: 4px; cursor: none !important; font-size: 14px; font-family: inherit; transition: all 0.3s; }
+        .cookie-accept { background: #333 !important; color: #555 !important; font-size: 8px !important; padding: 4px 8px !important; }
+        .cookie-reject { background: #333 !important; color: #555 !important; font-size: 6px !important; padding: 2px 4px !important; }
+        .cookie-manage { background: #e94560 !important; color: white !important; font-size: 18px !important; padding: 15px 40px !important; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.05)} }
+
+        /* NEWSLETTER POPUP - slow rotation, no flashing */
+        .popup-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7); z-index: 99999;
+            display: flex; align-items: center; justify-content: center;
+            animation: popupSpin 30s linear infinite;
+        }
+        @keyframes popupSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .popup-box {
+            background: white; padding: 40px; border-radius: 12px;
+            max-width: 500px; width: 90%; text-align: center; position: relative;
+            animation: popupWobble 4s infinite ease-in-out;
+            border: 3px solid #e94560;
+        }
+        @keyframes popupWobble { 0%, 100% { transform: rotate(-1deg) scale(1); } 50% { transform: rotate(1deg) scale(1.02); } }
+        .popup-box h2 { font-size: 28px; margin-bottom: 10px; color: #e94560; }
+        .popup-box p { font-size: 16px; color: #666; margin-bottom: 20px; }
+        .popup-box input {
+            width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px;
+            font-size: 16px; margin-bottom: 15px; font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        .popup-box input:focus { border-color: #e94560; box-shadow: 0 0 10px rgba(233,69,96,0.3); }
+        .popup-box .popup-submit { background: #e94560; color: white; border: none; padding: 12px 30px; font-size: 16px; border-radius: 6px; cursor: none !important; font-family: inherit; transition: transform 0.2s; }
+        .popup-box .popup-submit:hover { transform: scale(1.1); }
+        .popup-close { position: absolute; top: 8px; right: 12px; font-size: 10px; color: #eee; cursor: none !important; background: none; border: none; font-family: inherit; }
+
+        /* CHAT WIDGET */
+        #chatWidget { position: fixed; bottom: 120px; right: 20px; z-index: 99998; animation: widgetBounce 2s infinite ease-in-out; }
+        @keyframes widgetBounce { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-15px) rotate(5deg); } }
+        #chatBubble {
+            width: 70px; height: 70px; background: #e94560; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 30px; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            animation: chatBounce 3s infinite ease-in-out;
+        }
+        @keyframes chatBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+        #chatBox {
+            display: none; position: absolute; bottom: 80px; right: 0;
+            width: 320px; height: 400px; background: white; border-radius: 12px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.2); overflow: hidden; flex-direction: column;
+        }
+        #chatBox.open { display: flex; }
+        .chat-header { background: #e94560; color: white; padding: 15px; font-weight: bold; font-size: 16px; }
+        .chat-messages { flex: 1; padding: 15px; overflow-y: auto; font-size: 14px; color: #333; }
+        .chat-messages .bot-msg { background: #f0f0f0; padding: 8px 12px; border-radius: 12px; margin-bottom: 8px; display: inline-block; max-width: 80%; }
+        .chat-input-row { display: flex; border-top: 1px solid #ddd; }
+        .chat-input-row input { flex: 1; border: none; padding: 12px; font-size: 14px; font-family: inherit; outline: none; }
+        .chat-input-row button { background: #e94560; color: white; border: none; padding: 12px 18px; font-family: inherit; cursor: none !important; }
+
+        /* NAVBAR - HORRIFIC VERSION */
+        .navbar {
+            background: repeating-linear-gradient(45deg, #ff00ff 0px, #00ff00 10px, #ffff00 20px, #ff0000 30px, #00ffff 40px);
+            padding: 15px 30px; display: flex;
+            align-items: center; justify-content: space-between;
+            box-shadow: 0 0 30px rgba(255,0,255,0.8), 0 0 60px rgba(0,255,0,0.6);
+            position: sticky; top: 0; z-index: 1000;
+            animation: navbarGlitch 0.3s infinite, navbarColorShift 2s infinite;
+            border-bottom: 10px dotted #ff00ff;
+        }
+        @keyframes navbarGlitch {
+            0%, 95%, 100% { transform: translate(0) skew(0deg); }
+            96% { transform: translate(-5px, 3px) skew(-5deg); }
+            97% { transform: translate(5px, -3px) skew(5deg); }
+            98% { transform: translate(-3px, 2px) skew(-3deg); }
+        }
+        @keyframes navbarColorShift {
+            0% { filter: hue-rotate(0deg) saturate(5); }
+            50% { filter: hue-rotate(180deg) saturate(8); }
+            100% { filter: hue-rotate(360deg) saturate(5); }
+        }
+        .navbar .logo {
+            font-size: 28px; font-weight: bold;
+            background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: logoSpin 2s linear infinite, logoGlitch 0.5s infinite;
+            display: inline-block;
+            text-shadow: 3px 3px 0 #ff00ff, -3px -3px 0 #00ffff;
+        }
+        @keyframes logoSpin { from { transform: rotateY(0deg) scale(1); } to { transform: rotateY(360deg) scale(1.2); } }
+        @keyframes logoGlitch {
+            0%, 100% { transform: translate(0); }
+            25% { transform: translate(-3px, 3px); }
+            50% { transform: translate(3px, -3px); }
+            75% { transform: translate(-3px, -3px); }
+        }
+        .navbar .nav-links { display: flex; gap: 25px; align-items: center; }
+        .navbar .nav-links a { color: #333; text-decoration: none; font-size: 16px; position: relative; transition: transform 0.15s; display: inline-block; }
+        .navbar .search-bar { display: flex; border: 2px solid #ddd; border-radius: 25px; overflow: hidden; }
+        .navbar .search-bar input { border: none; padding: 8px 15px; font-size: 14px; width: 200px; font-family: inherit; outline: none; }
+        .navbar .search-bar button { background: #e94560; color: white; border: none; padding: 8px 18px; cursor: none !important; font-family: inherit; }
+        .cart-icon { font-size: 24px; position: relative; cursor: none !important; animation: cartShake 2s infinite ease-in-out; }
+        @keyframes cartShake { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+        .cart-count {
+            position: absolute; top: -8px; right: -10px; background: #e94560;
+            color: white; font-size: 11px; width: 20px; height: 20px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            animation: countPulse 2s infinite ease-in-out;
+        }
+        @keyframes countPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.3); } }
+
+        /* PROMO BANNER */
+        .promo-banner { background: linear-gradient(90deg, #e94560, #c23152); color: white; text-align: center; padding: 12px; font-size: 16px; letter-spacing: 1px; animation: bannerScroll 8s linear infinite; white-space: nowrap; overflow: hidden; }
+        @keyframes bannerScroll { 0% { text-indent: 100%; } 100% { text-indent: -100%; } }
+
+        /* PRODUCT GRID */
+        .section-title { font-size: 32px; text-align: center; margin: 40px 0 30px; color: #1a1a2e; animation: titleScale 3s infinite ease-in-out; }
+        @keyframes titleScale { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .product-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px; padding: 0 40px 40px; max-width: 1200px; margin: 0 auto;
+        }
+        .product-card {
+            background: repeating-conic-gradient(from 0deg, #ff00ff 0deg, #00ff00 60deg, #ffff00 120deg, #ff0000 180deg, #00ffff 240deg, #ff00ff 300deg);
+            border-radius: 12px; overflow: hidden;
+            box-shadow: 0 0 20px rgba(255,0,255,0.8), 0 0 40px rgba(0,255,0,0.6), 0 0 60px rgba(255,255,0,0.4);
+            transition: transform 0.1s, box-shadow 0.1s;
+            animation: cardFloat 1s infinite ease-in-out, cardRotate 3s infinite, cardColorPulse 2s infinite;
+            border: 5px dashed #ff00ff;
+        }
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(-5deg); }
+            50% { transform: translateY(0) rotate(5deg); }
+            75% { transform: translateY(-20px) rotate(-5deg); }
+        }
+        @keyframes cardRotate {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(5deg) scale(1.1); }
+        }
+        @keyframes cardColorPulse {
+            0%, 100% { filter: hue-rotate(0deg) saturate(5) brightness(1.2); }
+            50% { filter: hue-rotate(180deg) saturate(8) brightness(1.5); }
+        }
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.2) rotate(10deg);
+            box-shadow: 0 0 50px rgba(255,0,255,1), 0 0 100px rgba(0,255,0,1);
+            animation-play-state: paused;
+        }
+        .product-img {
+            width: 100%; height: 200px; background: #f5f5f5;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 80px; position: relative;
+        }
+        .product-badge {
+            position: absolute; top: 10px; left: 10px; background: #e94560;
+            color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;
+            animation: badgeSpin 3s linear infinite;
+        }
+        @keyframes badgeSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .product-info { padding: 15px; }
+        .product-info h3 { font-size: 18px; color: #1a1a2e; margin-bottom: 6px; }
+        .product-info .price { font-size: 22px; color: #e94560; font-weight: bold; }
+        .product-info .old-price { text-decoration: line-through; color: #999; font-size: 14px; margin-left: 8px; }
+        .product-info .stars { color: #f5a623; font-size: 14px; margin: 6px 0; }
+        .add-to-cart {
+            width: 100%; padding: 10px;
+            background: linear-gradient(90deg, #ff0000, #ff00ff, #0000ff, #00ff00, #ffff00, #ff0000);
+            background-size: 200% 200%;
+            color: white;
+            border: 3px solid #00ffff;
+            font-size: 15px;
+            font-family: inherit;
+            cursor: none !important;
+            border-radius: 0 0 12px 12px;
+            transition: all 0.1s;
+            animation: buttonRainbow 2s linear infinite, buttonShake 0.3s infinite;
+            text-shadow: 2px 2px 4px #000, -2px -2px 4px #fff;
+            font-weight: bold;
+        }
+        @keyframes buttonRainbow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+        @keyframes buttonShake {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-2px, 2px) rotate(-2deg); }
+            50% { transform: translate(2px, -2px) rotate(2deg); }
+            75% { transform: translate(-2px, -2px) rotate(-2deg); }
+        }
+        .add-to-cart:hover {
+            background: linear-gradient(90deg, #ffff00, #ff00ff, #00ffff, #ff0000);
+            transform: scale(1.3) rotate(5deg);
+            box-shadow: 0 0 30px #ff00ff, 0 0 60px #00ff00;
+        }
+
+        /* CAPTCHA MODAL */
+        .captcha-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); z-index: 200000;
+            display: none; align-items: center; justify-content: center;
+        }
+        .captcha-overlay.active { display: flex; }
+        .captcha-box { background: white; padding: 30px; border-radius: 12px; max-width: 420px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.3); animation: captchaBoxWobble 5s infinite ease-in-out; }
+        @keyframes captchaBoxWobble { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 25% { transform: translate(-3px, -3px) rotate(-0.5deg); } 75% { transform: translate(3px, 3px) rotate(0.5deg); } }
+        .captcha-box h3 { font-size: 20px; margin-bottom: 5px; color: #1a1a2e; }
+        .captcha-box .captcha-subtitle { font-size: 13px; color: #888; margin-bottom: 20px; }
+        .captcha-timer { 
+            font-size: 18px; 
+            font-weight: bold; 
+            color: #e94560; 
+            margin-bottom: 10px; 
+            text-align: center;
+            animation: timerPulse 1s infinite;
+        }
+        .captcha-timer.warning { color: #ff0000; animation: timerBlink 0.5s infinite; }
+        @keyframes timerPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        @keyframes timerBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .captcha-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
+            margin-bottom: 15px; border: 3px solid #ddd; border-radius: 4px; overflow: hidden;
+        }
+        .captcha-cell {
+            aspect-ratio: 1; background: #e0e0e0; display: flex;
+            align-items: center; justify-content: center; font-size: 40px;
+            cursor: none !important; transition: all 0.15s; position: relative;
+        }
+        .captcha-grid.distorted .captcha-cell {
+            animation: cellDistort 0.3s infinite;
+            filter: blur(0.5px) hue-rotate(10deg) saturate(1.2);
+        }
+        @keyframes cellDistort {
+            0%, 100% { transform: translateY(0) scale(1); }
+            25% { transform: translateY(-1px) scale(1.02); }
+            50% { transform: translateY(1px) scale(0.98); }
+            75% { transform: translateY(-1px) scale(1.01); }
+        }
+        .captcha-cell:hover { filter: brightness(0.9); transform: scale(1.05); }
+        .captcha-cell.selected { outline: 3px solid #4285f4; outline-offset: -3px; }
+        .captcha-cell.selected::after {
+            content: '✓'; position: absolute; top: 4px; left: 4px;
+            background: #4285f4; color: white; width: 22px; height: 22px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px;
+        }
+        .captcha-verify { background: #4285f4; color: white; border: none; padding: 10px 24px; font-size: 14px; border-radius: 4px; float: right; cursor: none !important; font-family: inherit; transition: all 0.2s; }
+        .captcha-verify:hover { transform: scale(1.05); }
+        .captcha-attempts { font-size: 12px; color: #e94560; margin-top: 10px; clear: both; }
+        .captcha-spinner { display: none; text-align: center; padding: 30px; font-size: 14px; color: #666; }
+        .captcha-spinner.active { display: block; }
+        .spinner { width: 40px; height: 40px; border: 4px solid #ddd; border-top-color: #4285f4; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 15px; }
+        @keyframes spin { to{transform:rotate(360deg)} }
+
+        /* SKIP BUTTON - evades but doesn't teleport crazily */
+        .captcha-skip-btn {
+            display: block;
+            margin: 15px auto 0;
+            padding: 8px 20px;
+            background: linear-gradient(90deg, #ff6b6b, #ffa500);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: none !important;
+            font-family: inherit;
+            position: relative;
+            transition: transform 0.3s ease-out;
+            box-shadow: 0 4px 15px rgba(255,0,0,0.3);
+        }
+        .captcha-skip-text {
+            display: block;
+            text-align: center;
+            font-size: 11px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* TERMS OVERLAY */
+        #termsOverlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7); z-index: 250000;
+            display: none; align-items: center; justify-content: center;
+        }
+        #termsOverlay.active { display: flex; }
+        .terms-box { background: white; padding: 30px; border-radius: 12px; max-width: 600px; width: 90%; animation: termsBoxWobble 6s infinite ease-in-out; }
+        @keyframes termsBoxWobble { 0%, 100% { transform: rotate(-0.5deg); } 50% { transform: rotate(0.5deg); } }
+        .terms-box h2 { font-size: 22px; margin-bottom: 15px; color: #1a1a2e; }
+        .terms-scroll { height: 300px; overflow-y: auto; border: 1px solid #ddd; padding: 15px; font-size: 5px; color: #ccc; margin-bottom: 15px; line-height: 1.2; }
+        .terms-agree-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+        .terms-agree-row input[type="checkbox"] { width: 16px; height: 16px; cursor: none !important; }
+        .terms-agree-row label { font-size: 14px; color: #333; }
+        #termsAgreeBtn { background: #ccc; color: #999; border: none; padding: 10px 30px; font-size: 16px; border-radius: 6px; cursor: none !important; font-family: inherit; transition: all 0.3s; }
+        #termsAgreeBtn.enabled { background: #e94560; color: white; box-shadow: 0 0 20px rgba(233,69,96,0.5); }
+
+        /* VOLUME SLIDER */
+        #volumeControl {
+            position: fixed; bottom: 120px; left: 20px; background: white;
+            padding: 15px; border-radius: 12px; box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+            z-index: 50000; width: 200px;
+            animation: volumeControlFloat 5s infinite ease-in-out;
+        }
+        @keyframes volumeControlFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        #volumeControl label { font-size: 13px; color: #333; display: block; margin-bottom: 8px; }
+        #volumeSlider { width: 100%; -webkit-appearance: none; appearance: none; height: 6px; border-radius: 3px; background: #ddd; outline: none; }
+        #volumeSlider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 18px; height: 18px; border-radius: 50%; background: #e94560; cursor: none !important; }
+        #volumeVal { font-size: 12px; color: #999; text-align: right; display: block; margin-top: 4px; }
+
+        /* AGE VERIFICATION - Hard but POSSIBLE to click */
+        #ageVerify {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #1a1a2e; z-index: 300000;
+            display: flex; align-items: center; justify-content: center;
+            color: white; flex-direction: column;
+        }
+        #ageVerify h2 { font-size: 36px; margin-bottom: 20px; color: white; }
+        #ageVerify p { font-size: 16px; color: #aaa; margin-bottom: 30px; max-width: 500px; text-align: center; }
+        .age-input-group { display: flex; gap: 15px; margin-bottom: 25px; }
+        .age-input-group select {
+            padding: 12px 18px; font-size: 16px; border: 2px solid #444;
+            background: #2a2a4a; color: white; border-radius: 8px;
+            font-family: inherit; cursor: none !important;
+        }
+        
+        /* THE HARD-BUT-CLICKABLE SUBMIT BUTTON */
+        #ageSubmit { 
+            background: #e94560; 
+            color: white; 
+            border: none; 
+            padding: 14px 40px; 
+            font-size: 18px; 
+            border-radius: 8px; 
+            cursor: none !important; 
+            font-family: inherit; 
+            position: relative;
+            animation: ageSubmitWobble 3s infinite ease-in-out, ageSubmitShrink 5s infinite ease-in-out;
+            transition: transform 0.1s;
+        }
+        @keyframes ageSubmitWobble { 
+            0%, 100% { transform: translateX(0) rotate(-2deg); } 
+            25% { transform: translateX(30px) rotate(1deg); } 
+            50% { transform: translateX(0) rotate(2deg); } 
+            75% { transform: translateX(-30px) rotate(-1deg); } 
+        }
+        @keyframes ageSubmitShrink {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(0.7); }
+        }
+        /* Make button grow on hover so users can catch it */
+        #ageSubmit:hover {
+            animation-play-state: paused;
+            transform: scale(1.2) !important;
+            box-shadow: 0 0 30px #e94560;
+        }
+        .age-error { color: #e94560; font-size: 14px; margin-top: 10px; display: none; }
+
+        /* TOAST CONTAINER */
+        #toastContainer {
+            position: fixed; top: 80px; right: 20px; z-index: 99997;
+            display: flex; flex-direction: column; gap: 8px; max-width: 340px;
+        }
+        .toast {
+            background: white; padding: 14px 18px; border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15); font-size: 14px; color: #333;
+            display: flex; align-items: center; gap: 10px;
+            border-left: 4px solid #e94560;
+            animation: slideIn 0.4s ease;
+        }
+        @keyframes slideIn { from{transform:translateX(100%);opacity:0} to{transform:translateX(0);opacity:1} }
+
+        /* CHECKOUT PROGRESS */
+        .checkout-progress {
+            display: flex; justify-content: center; align-items: center;
+            gap: 0; padding: 30px 40px; background: #fafafa;
+            overflow-x: auto;
+        }
+        .progress-step { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #999; cursor: none !important; padding: 8px 10px; border-radius: 10px; }
+        .progress-step.active { color: #e94560; font-weight: bold; }
+        .progress-step:hover { background: rgba(233,69,96,0.1); transform: rotate(-0.6deg); }
+        .progress-step .step-num {
+            width: 30px; height: 30px; border-radius: 50%; background: #ddd;
+            display: flex; align-items: center; justify-content: center; font-size: 14px; color: white;
+        }
+        .progress-step.active .step-num { background: #e94560; animation: stepNumActive 2s infinite ease-in-out; }
+        @keyframes stepNumActive { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+        .progress-line { width: 60px; height: 2px; background: #ddd; margin: 0 5px; }
+
+        /* DROPDOWN */
+        .hell-dropdown-wrapper { position: relative; display: inline-block; }
+        .hell-dropdown-btn { background: white; border: 2px solid #ddd; padding: 10px 18px; font-size: 14px; border-radius: 6px; cursor: none !important; font-family: inherit; display: flex; align-items: center; gap: 8px; }
+        .hell-dropdown-menu {
+            position: absolute; top: 100%; left: 0; background: white;
+            border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            min-width: 200px; display: none; z-index: 500; max-height: 300px; overflow-y: auto;
+            transition: transform 0.2s;
+        }
+        .hell-dropdown-menu.open { display: block; }
+        .hell-dropdown-item { padding: 10px 16px; font-size: 14px; color: #333; cursor: none !important; transition: background 0.15s; }
+        .hell-dropdown-item:hover { background: #f5f5f5; transform: scale(1.05); }
+
+        /* SCROLLBAR */
+        ::-webkit-scrollbar { width: 14px; }
+        ::-webkit-scrollbar-track { background: #f0f0f0; }
+        ::-webkit-scrollbar-thumb { background: #e94560; border-radius: 7px; }
+
+        /* CHAOS ELEMENTS */
+        .floating-emoji {
+            position: fixed;
+            font-size: 40px;
+            pointer-events: none;
+            z-index: 999950;
+            animation: floatEmoji 8s linear infinite;
+        }
+        @keyframes floatEmoji {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)) rotate(720deg); opacity: 0; }
+        }
+
+        /* FAKE LOADING SCREEN */
+        .fake-loader {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            z-index: 999999;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .fake-loader.active { display: flex; }
+        .loader-spinner {
+            width: 80px; height: 80px;
+            border: 6px solid rgba(255,255,255,0.1);
+            border-top-color: #e94560;
+            border-radius: 50%;
+            animation: loaderSpin 1.5s linear infinite;
+            margin-bottom: 30px;
+        }
+        @keyframes loaderSpin { to { transform: rotate(360deg); } }
+        .loader-text {
+            font-size: 24px;
+            margin-bottom: 20px;
+            animation: loaderPulse 2s infinite;
+        }
+        @keyframes loaderPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .loader-progress {
+            width: 300px; height: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        .loader-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            width: 0%;
+            transition: width 0.3s;
+        }
+        .loader-status {
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+        }
+
+        /* MISLEADING BUTTON STYLES */
+        .misleading-btn {
+            position: fixed;
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            z-index: 99998;
+            cursor: none !important;
+            animation: misleadingFloat 4s infinite ease-in-out;
+        }
+        @keyframes misleadingFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+        /* CHECKOUT NIGHTMARE FLOW */
+        .misery-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 230000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(18, 10, 10, 0.88);
+            backdrop-filter: blur(1px);
+        }
+        .misery-overlay.active { display: flex; }
+        .misery-card {
+            width: min(960px, 96vw);
+            max-height: 92vh;
+            overflow: auto;
+            padding: 24px;
+            border: 6px ridge #f3ff00;
+            border-radius: 18px;
+            background:
+                repeating-linear-gradient(45deg, #2b0818 0, #2b0818 14px, #11390c 14px, #11390c 28px),
+                linear-gradient(90deg, rgba(255,255,255,0.08), rgba(0,0,0,0.15));
+            box-shadow: 0 0 0 6px #001eff, 0 10px 40px rgba(0,0,0,0.55);
+            transform: rotate(-0.7deg);
+            animation: miseryCardTilt 6s ease-in-out infinite;
+        }
+        @keyframes miseryCardTilt {
+            0%,100% { transform: rotate(-0.7deg) scale(1); }
+            50% { transform: rotate(0.7deg) scale(1.01); }
+        }
+        .misery-card h2 {
+            margin-bottom: 10px;
+            color: #fff600;
+            text-shadow: 2px 2px 0 #0f00b8, -2px -2px 0 #b3002d;
+            font-family: "Creepster", "Comic Sans MS", cursive;
+            letter-spacing: 1.5px;
+            font-size: 38px;
+        }
+        .misery-card p,
+        .misery-card li,
+        .misery-card label {
+            color: #fefefe;
+            font-size: 15px;
+            line-height: 1.35;
+        }
+        .misery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
+            margin-top: 14px;
+        }
+        .misery-input,
+        .misery-select,
+        .misery-btn {
+            width: 100%;
+            padding: 10px 12px;
+            border: 3px dashed #ff3f00;
+            background: #020f24;
+            color: #f8ff8c;
+            font-family: "Comic Neue", "Comic Sans MS", cursive;
+            font-size: 15px;
+        }
+        .misery-input:focus,
+        .misery-select:focus {
+            outline: 4px solid #f4ff2b;
+            outline-offset: 1px;
+        }
+        .misery-btn {
+            background: linear-gradient(90deg, #ff0059, #0f76ff);
+            color: #fff;
+            font-weight: 700;
+            border-style: solid;
+            cursor: none !important;
+            margin-top: 10px;
+            transition: transform 0.1s, box-shadow 0.3s, opacity 0.3s;
+            position: relative;
+        }
+        .misery-btn:hover { transform: translateY(-2px) scale(1.02); }
+        .misery-btn[disabled] {
+            opacity: 0.45;
+            filter: grayscale(0.8);
+        }
+        .misery-btn.valid {
+            animation: validPulse 1.2s infinite ease-in-out;
+            box-shadow: 0 0 30px rgba(255, 0, 95, 0.9), 0 0 60px rgba(15, 118, 255, 0.6);
+        }
+        @keyframes validPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        .misery-note {
+            margin-top: 10px;
+            background: rgba(0,0,0,0.45);
+            border-left: 6px solid #ffe600;
+            padding: 8px 10px;
+        }
+        .misery-flex {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .misery-chip {
+            padding: 6px 10px;
+            border: 2px dotted #ff00d4;
+            background: #2c1232;
+            color: #fff;
+            font-size: 12px;
+        }
+        .misery-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background: rgba(7,7,7,0.45);
+        }
+        .misery-table th,
+        .misery-table td {
+            border: 2px solid #ffd000;
+            padding: 8px;
+            text-align: left;
+            color: #fff;
+        }
+        .misery-table th { background: #3d1541; }
+        #temuPopupLayer {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 180000;
+        }
+        .temu-popup {
+            position: fixed;
+            width: min(300px, 88vw);
+            background: linear-gradient(150deg, #ff6b00, #ff007e);
+            border: 4px solid #fff200;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+            padding: 12px;
+            color: #fff;
+            pointer-events: auto;
+            animation: temuFloat 3.8s ease-in-out infinite;
+            transform-origin: center;
+        }
+        .temu-popup h4 {
+            font-size: 17px;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 0 #12003a;
+        }
+        .temu-popup p { font-size: 13px; margin-bottom: 8px; }
+        .temu-popup .temu-row { display: flex; gap: 8px; }
+        .temu-popup button {
+            flex: 1;
+            padding: 8px;
+            border: 2px solid #fff;
+            background: #12003a;
+            color: #fff;
+            font-family: inherit;
+            font-size: 12px;
+            cursor: none !important;
+        }
+        @keyframes temuFloat {
+            0%,100% { transform: translateY(0) rotate(-0.7deg); }
+            50% { transform: translateY(-5px) rotate(0.7deg); }
+        }
+        #cartMazeArea {
+            max-height: 220px;
+            overflow-y: auto;
+            margin-top: 8px;
+            border: 3px dotted #ff2d55;
+            padding: 8px;
+            background: rgba(2,0,10,0.65);
+        }
+        #cartMazeArea .maze-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+        #paymentSubmitBtn {
+            position: relative;
+            transition: left 0.15s ease, top 0.15s ease;
+        }
+        #finalFailureWall {
+            margin-top: 14px;
+            padding: 10px;
+            border: 3px dashed #ffee00;
+            background: rgba(0,0,0,0.55);
+            color: #fff;
+        }
+        @media (max-width: 760px) {
+            .misery-card h2 { font-size: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FAKE LOADING SCREEN -->
+    <div class="fake-loader" id="fakeLoader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text" id="loaderText">Loading amazing deals...</div>
+        <div class="loader-progress">
+            <div class="loader-progress-bar" id="loaderProgress"></div>
+        </div>
+        <div class="loader-status" id="loaderStatus">Initializing...</div>
+    </div>
+
+    <!-- CHAOS OVERLAYS -->
+    <div class="chaos-overlay"></div>
+    <div class="distortion-wave" id="distortionWave"></div>
+
+    <!-- AGE VERIFICATION - Hard but clickable -->
+    <div id="ageVerify">
+        <h2>🔒 Age Verification Required</h2>
+        <p>ShopMart™ is required by law to verify your age before you can browse our exclusive collection of... socks.</p>
+        <div class="age-input-group">
+            <select id="ageMonth">
+                <option value="">Month</option>
+                <option>January</option><option>February</option><option>March</option>
+                <option>April</option><option>May</option><option>June</option>
+                <option>July</option><option>August</option><option>September</option>
+                <option>October</option><option>November</option><option>December</option>
+            </select>
+            <select id="ageDay"><option value="">Day</option></select>
+            <select id="ageYear"><option value="">Year</option></select>
+        </div>
+        <button id="ageSubmit">Verify My Age</button>
+        <p style="font-size: 12px; color: #666; margin-top: 15px;">💡 Tip: Hover over the button to make it easier to click!</p>
+        <div class="age-error" id="ageError"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">🛒 ShopMart™</div>
+        <div class="nav-links">
+            <a href="#" class="nav-evade">Home</a>
+            <a href="#" class="nav-evade">Products</a>
+            <div class="hell-dropdown-wrapper" id="categoryDropdown">
+                <button class="hell-dropdown-btn nav-evade">Categories ▾</button>
+                <div class="hell-dropdown-menu"></div>
+            </div>
+            <a href="#" class="nav-evade">Deals</a>
+            <a href="#" class="nav-evade">Contact</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search products..." id="searchInput">
+            <button id="searchBtn">🔍</button>
+        </div>
+        <div class="cart-icon" id="cartIcon">🛒<span class="cart-count" id="cartCount">0</span></div>
+    </nav>
+
+    <!-- PROMO BANNER -->
+    <div class="promo-banner">
+        🔥 FREE SHIPPING ON ORDERS OVER $9,999.99 — USE CODE: <strong id="promoCode">YOULLNEVERGUESSTHIS2024XYZOMGWTFBBQ</strong> 🔥
+    </div>
+
+    <!-- CHECKOUT PROGRESS -->
+    <div class="checkout-progress">
+        <div class="progress-step active" data-step="1"><span class="step-num">1</span> Browse</div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="2"><span class="step-num">2</span> Cart</div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="3"><span class="step-num">3</span> Verify Humanity</div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="4"><span class="step-num">4</span> Create Account</div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="5"><span class="step-num">5</span> Verify Again</div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="6"><span class="step-num">6</span> Pay</div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="7"><span class="step-num">7</span> Regret</div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <h2 class="section-title" id="dealsTitle">🔥 Today's "Deals" 🔥</h2>
+    <div class="product-grid" id="productGrid"></div>
+
+    <!-- CAPTCHA MODAL -->
+    <div class="captcha-overlay" id="captchaOverlay">
+        <div class="captcha-box">
+            <div id="captchaContent">
+                <h3>🔒 Verify you are human</h3>
+                <p class="captcha-subtitle" id="captchaPrompt"></p>
+                <div class="captcha-timer" id="captchaTimer">Time: 30s</div>
+                <div class="captcha-grid" id="captchaGrid"></div>
+                <button class="captcha-verify" id="captchaVerify">Verify</button>
+                <div class="captcha-attempts" id="captchaAttempts"></div>
+                
+                <!-- EVASIVE SKIP BUTTON -->
+                <div class="captcha-skip-container" id="captchaSkipContainer">
+                    <button class="captcha-skip-btn" id="captchaSkipBtn">✨ Skip CAPTCHA ✨</button>
+                    <span class="captcha-skip-text">Click here to skip verification (easy mode!)</span>
+                </div>
+            </div>
+            <div class="captcha-spinner" id="captchaSpinner">
+                <div class="spinner"></div>
+                <p>Verifying...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="temuPopupLayer"></div>
+
+    <!-- STEP 2: CART NIGHTMARE -->
+    <div class="misery-overlay" id="cartOverlay">
+        <div class="misery-card">
+            <h2>Step 2: Cart Navigation Nightmare</h2>
+            <p>You made it to cart. Now prove you can navigate this mess.</p>
+            <table class="misery-table">
+                <thead>
+                    <tr><th>Product</th><th>Qty</th><th>Subtotal</th></tr>
+                </thead>
+                <tbody id="cartRows"></tbody>
+            </table>
+            <div class="misery-grid">
+                <div>
+                    <label for="shippingSelect">Shipping speed (all equally bad):</label>
+                    <select class="misery-select" id="shippingSelect"></select>
+                </div>
+                <div>
+                    <label for="warehouseTip">Tip the warehouse goblin (must be exactly 87):</label>
+                    <input class="misery-input" id="warehouseTip" type="range" min="0" max="100" value="12">
+                    <div class="misery-note">Current tip: <strong id="warehouseTipVal">12</strong>%</div>
+                </div>
+            </div>
+            <div id="cartMazeArea"></div>
+            <label style="display:flex;gap:8px;align-items:flex-start;margin-top:8px;">
+                <input type="checkbox" id="cartAffirm">
+                <span>I confirm this is the worst cart UI I have seen and still want to continue.</span>
+            </label>
+            <button class="misery-btn" id="cartContinueBtn" disabled>I survived cart, proceed to Step 3</button>
+        </div>
+    </div>
+
+    <!-- STEP 4: ACCOUNT MISERY -->
+    <div class="misery-overlay" id="accountOverlay">
+        <div class="misery-card">
+            <h2>Step 4: Create Account</h2>
+            <p>Please create an account through our form.</p>
+            <div class="misery-grid">
+                <input class="misery-input misery-jitter" id="accName" placeholder="Username (at least 6 chars)">
+                <input class="misery-input misery-jitter" id="accEmail" placeholder="Email that looks real">
+                <div style="position:relative;">
+                    <input class="misery-input misery-jitter" id="accPass" type="password" placeholder="Password must include 'ugh'">
+                    <div class="misery-note" id="passwordStrength" style="position:absolute;top:-30px;left:0;width:100%;text-align:center;font-size:11px;"></div>
+                </div>
+                <input class="misery-input misery-jitter" id="accPass2" type="password" placeholder="Confirm password">
+                <input class="misery-input misery-jitter" id="accSuffering" placeholder="Type: I AGREE TO SUFFER">
+            </div>
+            <div class="misery-note" id="accountRules">
+                <div class="validation-checklist">
+                    <div class="checklist-item" data-rule="username">❌ Username: exactly 8 characters</div>
+                    <div class="checklist-item" data-rule="email">❌ Valid email format</div>
+                    <div class="checklist-item" data-rule="passLength">❌ Password: 8+ characters</div>
+                    <div class="checklist-item" data-rule="passUgh">❌ Password contains "ugh"</div>
+                    <div class="checklist-item" data-rule="passNumber">❌ Password contains at least one number</div>
+                    <div class="checklist-item" data-rule="passMatch">❌ Passwords match</div>
+                    <div class="checklist-item" data-rule="suffering">❌ "I AGREE TO HIDDEN TERMS"</div>
+                </div>
+            </div>
+            <button class="misery-btn" id="accountContinueBtn" disabled>Account complete, move to Step 5</button>
+        </div>
+    </div>
+
+    <!-- STEP 5: VERIFY AGAIN (NOT CAPTCHA) -->
+    <div class="misery-overlay" id="verifyAgainOverlay">
+        <div class="misery-card">
+            <h2>Step 5: Verify Again (because we can)</h2>
+            <p>We sent a 6-digit code to your email. It is shown below in tiny moving text.</p>
+            <div class="misery-note" id="movingCodeHint">Code appears here shortly...</div>
+            <div class="misery-flex" style="margin-top:10px;">
+                <input class="misery-input" id="verifyAgainInput" placeholder="Enter 6-digit code">
+                <button class="misery-btn" id="verifyAgainResendBtn" style="max-width:220px;">Resend Different Code</button>
+            </div>
+            <button class="misery-btn" id="verifyAgainContinueBtn">Continue to Step 6</button>
+        </div>
+    </div>
+
+    <!-- STEP 6: FAKE PAYMENT -->
+    <div class="misery-overlay" id="paymentOverlay">
+        <div class="misery-card">
+            <h2>Step 6: Fake Payment Screen</h2>
+            <p>This is fake payment. No real charges. Still painful.</p>
+            <div class="misery-grid">
+                <input class="misery-input misery-jitter" id="payCard" placeholder="Card number (16 digits)">
+                <input class="misery-input misery-jitter" id="payName" placeholder="Name on card">
+                <input class="misery-input misery-jitter" id="payExp" placeholder="MM/YY">
+                <input class="misery-input misery-jitter" id="payCvv" placeholder="CVV">
+                <select class="misery-select misery-jitter" id="payCountry">
+                    <option value="">Select billing country</option>
+                    <option>United States</option>
+                    <option>Atlantis</option>
+                    <option>The Moon</option>
+                    <option>Unknown</option>
+                </select>
+            </div>
+            <label style="display:flex;gap:8px;align-items:flex-start;margin-top:8px;">
+                <input type="checkbox" id="payFakeAgree">
+                <span>I understand this payment is fake and this costs a lot more mentally then from your wallet.</span>
+            </label>
+            <button class="misery-btn" id="paymentSubmitBtn" disabled>Pretend To Pay And Go To Step 7</button>
+        </div>
+    </div>
+
+    <!-- STEP 7: FINAL FAILURE -->
+    <div class="misery-overlay" id="finalOverlay">
+        <div class="misery-card">
+            <h2>Step 7: One last CAPTCHA</h2>
+            <p>You are one click from fake success. Of course there is one final captcha.</p>
+            <button class="misery-btn" id="openFinalCaptchaBtn">Place Order Forever</button>
+            <div id="finalFailureWall">
+                Final step policy: the last captcha always fails and restarts all progress.
+            </div>
+        </div>
+    </div>
+
+    <!-- TERMS OVERLAY -->
+    <div id="termsOverlay">
+        <div class="terms-box">
+            <h2>📜 Terms and Conditions</h2>
+            <div class="terms-scroll" id="termsText"></div>
+            <div class="terms-agree-row">
+                <input type="checkbox" id="termsCheckbox">
+                <label for="termsCheckbox" id="termsLabel">I have read and agree to the Terms and Conditions</label>
+            </div>
+            <button id="termsAgreeBtn">Continue</button>
+        </div>
+    </div>
+
+    <!-- NEWSLETTER POPUP -->
+    <div class="popup-overlay" id="newsletterPopup" style="display:none;">
+        <div class="popup-box">
+            <button class="popup-close" id="popupClose">✕</button>
+            <h2>🎉 Wait! Don't Leave!</h2>
+            <p>Sign up for our newsletter and get <strong>0.01% off</strong> your first order!*</p>
+            <input type="email" placeholder="your@email.com" id="newsletterEmail">
+            <button class="popup-submit" id="newsletterSubmit">Subscribe Now!</button>
+            <p style="font-size:6px;color:#eee;margin-top:15px;">*Discount applies only to orders placed on Feb 29th in non-leap years. Additional terms apply. By subscribing, you agree to receive 847 emails per day.</p>
+        </div>
+    </div>
+
+    <!-- CHAT WIDGET -->
+    <div id="chatWidget">
+        <div id="chatBubble">💬</div>
+        <div id="chatBox">
+            <div class="chat-header">ShopBot™ — Online 🟢</div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="bot-msg">Hi! How can I help you today? 😊</div>
+            </div>
+            <div class="chat-input-row">
+                <input type="text" placeholder="Type a message..." id="chatInput">
+                <button id="chatSend">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- VOLUME SLIDER -->
+    <div id="volumeControl">
+        <label>🔊 Site Volume</label>
+        <input type="range" id="volumeSlider" min="0" max="100" value="50">
+        <span id="volumeVal">50%</span>
+    </div>
+
+    <!-- COOKIE BANNER -->
+    <div id="cookieBanner">
+        <h3>🍪 We Value Your Privacy (Not Really)</h3>
+        <p>We use 3,847 cookies, 291 trackers, and a guy named Dave who watches everything you do. By existing on this page, you've already agreed.</p>
+        <div class="cookie-btns">
+            <button class="cookie-manage" id="cookieManage">Manage Preferences (Recommended)</button>
+            <button class="cookie-accept" id="cookieAccept">Accept All</button>
+            <button class="cookie-reject" id="cookieReject">Reject (you monster)</button>
+        </div>
+    </div>
+
+    <!-- CUSTOM CURSORS -->
+    <div id="fakeCursor"></div>
+    <div id="fakeCursorInner"></div>
+
+    <!-- TOAST CONTAINER -->
+    <div id="toastContainer"></div>
+
+    <!-- SCRIPT 1: Core functionality -->
+    <script>
+        // --- 1. Custom Lagging Cursor ---
+        const fakeCursor = document.getElementById('fakeCursor');
+        const fakeCursorInner = document.getElementById('fakeCursorInner');
+        let lastTrailTime = 0;
+        let lastMouseX = null;
+        let lastMouseY = null;
+        let lastResistanceKick = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            if (fakeCursor) {
+                fakeCursor.style.left = (e.clientX - 30) + 'px';
+                fakeCursor.style.top = (e.clientY - 30) + 'px';
+            }
+            if (fakeCursorInner) {
+                fakeCursorInner.style.left = (e.clientX - 6) + 'px';
+                fakeCursorInner.style.top = (e.clientY - 6) + 'px';
+            }
+
+            // Cursor resistance: subtle reverse scroll kick on faster movement.
+            if (lastMouseX !== null && lastMouseY !== null) {
+                const dx = e.clientX - lastMouseX;
+                const dy = e.clientY - lastMouseY;
+                const speed = Math.sqrt(dx * dx + dy * dy);
+                const now = Date.now();
+                if (speed > 14 && now - lastResistanceKick > 90) {
+                    lastResistanceKick = now;
+                    window.scrollBy(-dx * 0.16, -dy * 0.11);
+                }
+            }
+            lastMouseX = e.clientX;
+            lastMouseY = e.clientY;
+            
+            const distortionWave = document.getElementById('distortionWave');
+            if (distortionWave) {
+                distortionWave.style.setProperty('--x', (e.clientX / window.innerWidth * 100) + '%');
+                distortionWave.style.setProperty('--y', (e.clientY / window.innerHeight * 100) + '%');
+            }
+            
+            const now = Date.now();
+            if (now - lastTrailTime > 50) {
+                lastTrailTime = now;
+                const dot = document.createElement('div');
+                dot.className = 'mouse-trail-dot';
+                dot.style.left = e.clientX + 'px';
+                dot.style.top = e.clientY + 'px';
+                document.body.appendChild(dot);
+                setTimeout(() => { dot.style.opacity = '0'; }, 200);
+                setTimeout(() => { dot.remove(); }, 700);
+            }
+        });
+
+        // --- 2. Age Verification - Hard but clickable ---
+        window._ageAttempts = 0;
+        const ageDay = document.getElementById('ageDay');
+        const ageYear = document.getElementById('ageYear');
+        const ageSubmit = document.getElementById('ageSubmit');
+
+        // Populate day with wrong options (primes only)
+        if (ageDay) {
+            [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31].forEach(d => {
+                const opt = document.createElement('option');
+                opt.value = d; opt.textContent = d; ageDay.appendChild(opt);
+            });
+        }
+        // Populate year with every 3rd year
+        if (ageYear) {
+            for (let y = 1923; y <= 2026; y += 3) {
+                const opt = document.createElement('option');
+                opt.value = y; opt.textContent = y; ageYear.appendChild(opt);
+            }
+        }
+        
+        if (ageSubmit) {
+            const rejectionMessages = [
+                "Our records indicate you were born on a different day. Please try again.",
+                "Hmm, that doesn't look right. Are you sure about the year?",
+                "Error: Your birthday conflicts with our database. Please re-enter.",
+                "Age verification failed. Please ensure you exist.",
+                "We couldn't verify your age. Have you tried being born on a different day?"
+            ];
+            ageSubmit.addEventListener('click', () => {
+                window._ageAttempts++;
+                const err = document.getElementById('ageError');
+                if (window._ageAttempts <= 5) {
+                    if (err) { err.style.display = 'block'; err.textContent = rejectionMessages[window._ageAttempts - 1]; }
+                    // Randomize dropdowns to frustrate user
+                    if (ageDay) ageDay.selectedIndex = Math.floor(Math.random() * ageDay.options.length);
+                    if (ageYear) ageYear.selectedIndex = Math.floor(Math.random() * ageYear.options.length);
+                } else {
+                    document.getElementById('ageVerify').style.display = 'none';
+                    showToast('🎉 Age verified! Welcome to ShopMart™!');
+                    setTimeout(() => { if (typeof startTemuPopupStorm === 'function') startTemuPopupStorm(); }, 500);
+                    setTimeout(() => { document.getElementById('newsletterPopup').style.display = 'flex'; }, 3000);
+                }
+            });
+        }
+
+        // --- 3. Toast System ---
+        function showToast(message) {
+            const container = document.getElementById('toastContainer');
+            if (!container) return;
+            const toast = document.createElement('div');
+            toast.className = 'toast'; toast.textContent = message;
+            container.prepend(toast);
+            const toasts = container.querySelectorAll('.toast');
+            if (toasts.length > 5) for (let i = 5; i < toasts.length; i++) toasts[i].remove();
+            setTimeout(() => { toast.remove(); }, 5000);
+        }
+        window.showToast = showToast;
+
+        const toastCities = ["Tokyo","Paris","Scranton","Atlantis","The Moon","Your Mom's House","Narnia","Area 51"];
+        const toastProducts = ["Invisible Socks","Pre-Chewed Gum","Emotional Support Brick","WiFi-Enabled Rock","Organic Air","Artisanal Dirt","Gluten-Free Water"];
+        function randomFrom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+        function startToastSpam() {
+            (function next() {
+                setTimeout(() => {
+                    const templates = [
+                        () => `🔥 Someone in ${randomFrom(toastCities)} just bought ${randomFrom(toastProducts)}!`,
+                        () => `⏰ Only ${Math.floor(Math.random()*3)+1} left in stock!`,
+                        () => `👀 ${Math.floor(Math.random()*46)+5} people are viewing this right now`,
+                        () => `💰 Price drop alert! (Just kidding, prices went up)`,
+                        () => `🎉 You've been selected for a special offer! (Not really)`,
+                        () => `📦 Your cart misses you! (You have nothing in it)`,
+                        () => `⚡ Flash sale ends in ${Math.floor(Math.random()*59)+1}:${String(Math.floor(Math.random()*60)).padStart(2,'0')}!`,
+                        () => `🏆 You're our 1,000,000th visitor! (You're not)`
+                    ];
+                    showToast(randomFrom(templates)());
+                    next();
+                }, (Math.random() * 7 + 8) * 1000);
+            })();
+        }
+        window.startToastSpam = startToastSpam;
+
+        // --- 4. Temu-style popup spam ---
+        var temuPopupTimer = null;
+        function spawnTemuPopup() {
+            var layer = document.getElementById('temuPopupLayer');
+            if (!layer) return;
+            var pop = document.createElement('div');
+            pop.className = 'temu-popup';
+            pop.style.left = Math.floor(Math.random() * Math.max(40, window.innerWidth - 320)) + 'px';
+            pop.style.top = Math.floor(Math.random() * Math.max(80, window.innerHeight - 260)) + 'px';
+            pop.style.transform = 'rotate(' + ((Math.random() * 10) - 5) + 'deg)';
+            var offers = [
+                'Spin now for 99.999% off a mystery tax.',
+                'Flash mega deal ends in ' + (Math.floor(Math.random() * 8) + 2) + ' seconds.',
+                'You unlocked VIP bargain mode accidentally.',
+                'Only for you: 400 coupons that conflict with each other.'
+            ];
+            pop.innerHTML =
+                '<h4>LIMITED TIME SUPER DEAL</h4>' +
+                '<p>' + randomFrom(offers) + '</p>' +
+                '<div class="temu-row">' +
+                '<button class="temu-open">CLAIM</button>' +
+                '<button class="temu-close">LATER</button>' +
+                '</div>';
+            layer.appendChild(pop);
+
+            pop.querySelector('.temu-open')?.addEventListener('click', function() {
+                showToast('Deal applied. Checkout got 3% harder.');
+                pop.remove();
+                if (Math.random() > 0.45) spawnTemuPopup();
+            });
+            pop.querySelector('.temu-close')?.addEventListener('click', function() {
+                pop.remove();
+                if (Math.random() > 0.2) spawnTemuPopup();
+            });
+            setTimeout(function() {
+                if (pop.isConnected) pop.remove();
+            }, 18000);
+        }
+        function startTemuPopupStorm() {
+            if (temuPopupTimer) return;
+            spawnTemuPopup();
+            startToastSpam();
+            temuPopupTimer = setInterval(function() {
+                if (document.hidden) return;
+                if (Math.random() > 0.25) spawnTemuPopup();
+            }, 6000);
+        }
+        window.startTemuPopupStorm = startTemuPopupStorm;
+
+        // --- 5. Cookie Banner ---
+        let cookieBannerDismissals = 0;
+        document.getElementById('cookieAccept')?.addEventListener('click', () => {
+            cookieBannerDismissals++;
+            if (cookieBannerDismissals < 3) { showToast(`⚠️ Please click "Accept All" ${3 - cookieBannerDismissals} more time(s) to confirm.`); }
+            else { document.getElementById('cookieBanner').style.display = 'none'; showToast('🍪 3,847 cookies accepted. Dave says hi.'); }
+        });
+        document.getElementById('cookieReject')?.addEventListener('click', () => {
+            showToast('😢 Dave is very disappointed in you. Cookies loaded anyway.');
+            setTimeout(() => { document.getElementById('cookieBanner').style.display = 'none'; }, 2000);
+        });
+        document.getElementById('cookieManage')?.addEventListener('click', () => {
+            document.getElementById('termsOverlay').classList.add('active');
+        });
+
+        // --- 6. Newsletter Popup ---
+        document.getElementById('popupClose')?.addEventListener('click', () => {
+            document.getElementById('newsletterPopup').style.display = 'none';
+            setTimeout(() => { document.getElementById('newsletterPopup').style.display = 'flex'; }, 20000);
+        });
+        document.getElementById('newsletterSubmit')?.addEventListener('click', () => {
+            showToast('✅ Subscribed! Check your inbox for 847 welcome emails.');
+            const popup = document.getElementById('newsletterPopup');
+            const h2 = popup?.querySelector('h2'); const p = popup?.querySelector('p');
+            if (h2) h2.textContent = 'One More Thing...';
+            if (p) p.textContent = 'Now verify your email by solving a captcha.';
+            setTimeout(() => { popup.style.display = 'none'; if (typeof showCaptcha === 'function') showCaptcha(); }, 2000);
+        });
+
+        // --- 7. Search Bar - text changes as you type ---
+        const searchInput = document.getElementById('searchInput');
+        const searchPlaceholders = ["Nice try...","Search is decorative","404: Search not found","Why bother?","Results machine broke"];
+        
+        // Text that changes as you type
+        if (searchInput) {
+            let originalText = '';
+            searchInput.addEventListener('input', (e) => {
+                // Randomly scramble the text
+                if (Math.random() > 0.7 && e.target.value.length > 0) {
+                    const chars = e.target.value.split('');
+                    const idx = Math.floor(Math.random() * chars.length);
+                    chars[idx] = String.fromCharCode(97 + Math.floor(Math.random() * 26));
+                    e.target.value = chars.join('');
+                    showToast('🔤 Auto-corrected for your convenience!');
+                }
+            });
+        }
+        
+        function doSearch() {
+            if (!searchInput) return;
+            showToast(`🔍 No results found for '${searchInput.value}'. Did you mean: 'Please stop trying'?`);
+            searchInput.value = '';
+            searchInput.placeholder = randomFrom(searchPlaceholders);
+        }
+        document.getElementById('searchBtn')?.addEventListener('click', doSearch);
+        searchInput?.addEventListener('keydown', (e) => { if (e.key === 'Enter') doSearch(); });
+
+        // --- 8. Nav Links - swap positions periodically ---
+        const navAlerts = [
+            "This page is under construction. Since 2003.",
+            "Error 418: I'm a teapot.",
+            "Access denied. Reason: We don't like you.",
+            "Page moved to: http://www.example.com/nowhere",
+            "Loading... forever."
+        ];
+        document.querySelectorAll('.nav-evade').forEach(link => {
+            link.addEventListener('mouseover', () => {
+                link.style.transform = `translateX(${Math.random()*200-100}px) translateY(${Math.random()*60-30}px)`;
+            });
+            link.addEventListener('mouseout', () => { link.style.transform = 'none'; });
+            link.addEventListener('click', (e) => { e.preventDefault(); alert(randomFrom(navAlerts)); });
+        });
+        
+        // Swap nav link positions every 10 seconds
+        setInterval(() => {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks) {
+                const links = Array.from(navLinks.children);
+                if (links.length > 1) {
+                    const idx1 = Math.floor(Math.random() * links.length);
+                    const idx2 = Math.floor(Math.random() * links.length);
+                    if (idx1 !== idx2) {
+                        const temp = links[idx1].innerHTML;
+                        links[idx1].innerHTML = links[idx2].innerHTML;
+                        links[idx2].innerHTML = temp;
+                    }
+                }
+            }
+        }, 10000);
+
+        // --- 9. Product Grid ---
+        const products = [
+            { emoji:"🧦", name:"Premium Luxury Socks", price:"$4,999.99", oldPrice:"$5,000.00", badge:"0.01% OFF", stars:1 },
+            { emoji:"🪨", name:"WiFi-Enabled Rock", price:"$12,749.00", oldPrice:"$12,750.00", badge:"SMART", stars:2 },
+            { emoji:"🧱", name:"Emotional Support Brick", price:"$899.99", oldPrice:null, badge:"BESTSELLER", stars:5 },
+            { emoji:"💨", name:"Organic Artisanal Air", price:"$299.99/breath", oldPrice:"$300.00/breath", badge:"ORGANIC", stars:3 },
+            { emoji:"🫧", name:"Invisible Headphones", price:"$7,499.99", oldPrice:null, badge:"NEW", stars:4 },
+            { emoji:"🗑️", name:"Designer Trash Bag", price:"$1,200.00", oldPrice:"$1,200.01", badge:"LUXURY", stars:5 },
+            { emoji:"🧊", name:"Ice Cube Subscription", price:"$49.99/mo", oldPrice:null, badge:"SUBSCRIBE", stars:2 },
+            { emoji:"🫥", name:"Nothing™", price:"$9,999.99", oldPrice:"$10,000.00", badge:"TRENDING", stars:5 }
+        ];
+        const productGrid = document.getElementById('productGrid');
+        if (productGrid) {
+            products.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <div class="product-img">${p.emoji}<span class="product-badge">${p.badge}</span></div>
+                    <div class="product-info">
+                        <h3>${p.name}</h3>
+                        <div class="stars">${'⭐'.repeat(p.stars)}${'☆'.repeat(5-p.stars)}</div>
+                        <div><span class="price">${p.price}</span>${p.oldPrice ? `<span class="old-price">${p.oldPrice}</span>` : ''}</div>
+                    </div>
+                    <button class="add-to-cart">Add to Cart 🛒</button>`;
+                card.querySelector('.add-to-cart').addEventListener('click', () => { if (typeof showCaptcha === 'function') showCaptcha(); });
+                productGrid.appendChild(card);
+            });
+        }
+
+        // --- 10. Cart Icon ---
+        const cartCount = document.getElementById('cartCount');
+        document.getElementById('cartIcon')?.addEventListener('click', () => {
+            alert('Your cart is empty! (And always will be)');
+            if (cartCount) cartCount.textContent = '0';
+        });
+        setInterval(() => { if (cartCount) cartCount.textContent = Math.floor(Math.random() * 99) + 1; }, 30000);
+        
+        // --- 11. Text that changes as you read it ---
+        setInterval(() => {
+            const title = document.getElementById('dealsTitle');
+            if (title && Math.random() > 0.7) {
+                const original = "🔥 Today's \"Deals\" 🔥";
+                const alternatives = [
+                    "🔥 Yesterday's Leftovers 🔥",
+                    "🔥 Overpriced Junk 🔥",
+                    "🔥 Please Buy Something 🔥",
+                    "🔥 CEO Needs a Yacht 🔥",
+                    "🔥 Dave's Favorites 🔥"
+                ];
+                title.textContent = alternatives[Math.floor(Math.random() * alternatives.length)];
+                setTimeout(() => { title.textContent = original; }, 3000);
+            }
+        }, 8000);
+        
+        // Promo code that changes
+        setInterval(() => {
+            const promo = document.getElementById('promoCode');
+            if (promo && Math.random() > 0.5) {
+                const codes = [
+                    "ALMOSTTHERE",
+                    "SOCLOSE",
+                    "KEEPTRYING",
+                    "WRONGAGAIN",
+                    "NICEGUESS",
+                    "STILLNO"
+                ];
+                promo.textContent = codes[Math.floor(Math.random() * codes.length)];
+            }
+        }, 3000);
+    </script>
+
+    <!-- SCRIPT 2: Captcha, terms, chat, volume, dropdown, bonus horrors -->
+    <script>
+    (function() {
+        // 1. CAPTCHA SYSTEM WITH EVASIVE (but catchable) SKIP BUTTON
+        window._captchaRound = 0;
+        var captchaTotalAttempts = 0;
+
+        var rounds = [
+            { prompt: "Solve: What is 7 × 13 + 42 - 8? (Hint: Do the math carefully)", emojis: ["127","135","143","125","133","141","129","137","145"], type: "math", answer: "127" },
+            { prompt: "Find the ONE different emoji (hint: look VERY closely at the eyes)", emojis: ["😀","😀","😀","😀","😃","😀","😀","😀","😀"], type: "findDiff", answer: "😃" },
+            { prompt: "Type this backwards: <strong>I love this website</strong> <input id='backwardsInput' style='width:100%;margin:10px 0;padding:8px;' placeholder='Type here...'>", emojis: [], type: "backwards", answer: "etisbew siht evol I" },
+            { prompt: "Count the circles: <span id='circleCount' style='font-size:40px;'>⭕⭕⭕⭕⭕</span>", emojis: ["3","4","5","6","7","8","9","10","11"], type: "count", answer: "5" },
+            { prompt: "Select the number that equals 2+2 (basic math)", emojis: ["1","2","3","4","5","6","7","8","9"], type: "simple", answer: "4" },
+            { prompt: "What is the meaning of life? (Hint: It's the famous answer)", emojis: ["42","41","43","40","44","39","45","38","46"], type: "riddle", answer: "42" },
+            { prompt: "Click the HAPPY emoji (😊)", emojis: ["😭","😢","😔","😞","😊","😕","🙁","😐","🙂"], type: "findEmoji", answer: "😊" },
+            { prompt: "Select all prime numbers: 2, 7, 11, 13, 17", emojis: ["2","4","7","9","11","15","13","21","17"], type: "primes", answers: ["2","7","11","13","17"] },
+            { prompt: "Find the 🕵️ detective in this crowd", emojis: ["👨","👨","👨","👨","🕵️","👨","👨","👨","👨"], type: "waldo", answer: "🕵️" },
+            { prompt: "Riddle: I speak without a mouth, hear without ears. What am I?", emojis: ["Echo","Wind","Ghost","Sound","Voice","Spirit","Air","Whisper","Silence"], type: "riddle2", answer: "Echo" },
+            { prompt: "Type the code: <strong style='font-size:16px;'>ABC123</strong> <input id='codeInput' style='width:100%;margin:10px 0;padding:8px;' placeholder='Type here...'>", emojis: [], type: "code", answer: "ABC123" },
+            { prompt: "How many fingers am I holding up? (Hint: Check the title)", emojis: ["0","1","2","3","4","5","6","7","8"], type: "fingers", answer: "3" }
+        ];
+
+        function loadCaptchaRound() {
+            var round = rounds[window._captchaRound % rounds.length];
+            var grid = document.getElementById('captchaGrid');
+            var prompt = document.getElementById('captchaPrompt');
+            if (!grid || !prompt) return;
+            grid.innerHTML = '';
+            prompt.innerHTML = round.prompt;
+            
+            // For input-based challenges, don't create grid cells
+            if (round.type === "backwards" || round.type === "code") {
+                return;
+            }
+            
+            round.emojis.forEach(function(emoji) {
+                var cell = document.createElement('div');
+                cell.className = 'captcha-cell';
+                cell.textContent = emoji;
+                cell.addEventListener('click', function() {
+                    if (round.type === "primes") {
+                        // Allow multiple selections for primes
+                        cell.classList.toggle('selected');
+                    } else {
+                        // Single selection for others
+                        document.querySelectorAll('.captcha-cell').forEach(c => c.classList.remove('selected'));
+                        cell.classList.add('selected');
+                    }
+                });
+                grid.appendChild(cell);
+            });
+        }
+
+        // EVASIVE SKIP BUTTON - moves away more frequently and erratically
+        var skipBtn = document.getElementById('captchaSkipBtn');
+        var captchaBox = document.querySelector('.captcha-box');
+        var skipOffsetX = 0;
+        var skipOffsetY = 0;
+        var lastSkipMove = 0;
+        
+        function moveSkipButtonAway(mouseX, mouseY) {
+            if (!skipBtn || !captchaBox) return;
+            
+            var btnRect = skipBtn.getBoundingClientRect();
+            var btnCenterX = btnRect.left + btnRect.width / 2;
+            var btnCenterY = btnRect.top + btnRect.height / 2;
+            
+            var distance = Math.sqrt(Math.pow(mouseX - btnCenterX, 2) + Math.pow(mouseY - btnCenterY, 2));
+            var now = Date.now();
+            
+            // Move if mouse gets within 150px (was 100), or randomly every 2 seconds
+            if (distance < 150 || (now - lastSkipMove > 2000 && Math.random() > 0.6)) {
+                lastSkipMove = now;
+                
+                // Calculate direction - sometimes away from mouse, sometimes random
+                var angle;
+                if (distance < 150 && Math.random() > 0.3) {
+                    // Away from mouse
+                    angle = Math.atan2(btnCenterY - mouseY, btnCenterX - mouseX);
+                } else {
+                    // Random direction
+                    angle = Math.random() * Math.PI * 2;
+                }
+                
+                // More erratic movement distance (30-120px, was 80)
+                var moveDistance = 30 + Math.random() * 90;
+                
+                skipOffsetX += Math.cos(angle) * moveDistance;
+                skipOffsetY += Math.sin(angle) * moveDistance;
+                
+                // Allow more movement freedom
+                skipOffsetX = Math.max(-250, Math.min(250, skipOffsetX));
+                skipOffsetY = Math.max(-180, Math.min(180, skipOffsetY));
+                
+                skipBtn.style.transition = 'transform 0.1s ease-out';
+                skipBtn.style.transform = `translate(${skipOffsetX}px, ${skipOffsetY}px)`;
+                
+                const messages = [
+                    'Getting closer...', 'Almost...', 'So close!', 'Try again!', 'Nope!',
+                    'Haha!', 'Missed!', 'Too slow!', 'Not today!', 'Keep trying!'
+                ];
+                skipBtn.textContent = messages[Math.floor(Math.random() * messages.length)];
+            }
+        }
+
+        if (skipBtn) {
+            // Move away on mouse approach
+            document.addEventListener('mousemove', function(e) {
+                if (!document.getElementById('captchaOverlay').classList.contains('active')) return;
+                moveSkipButtonAway(e.clientX, e.clientY);
+            });
+            
+            // Reset position when captcha opens
+            skipBtn.style.transition = 'transform 0.3s ease-out';
+        }
+
+        window.showCaptcha = function() {
+            var overlay = document.getElementById('captchaOverlay');
+            if (!overlay) return;
+            overlay.classList.add('active');
+            captchaTotalAttempts = 0;
+            window._captchaRound = 0;
+            skipOffsetX = 0;
+            skipOffsetY = 0;
+            if (skipBtn) {
+                skipBtn.style.transform = 'translate(0, 0)';
+                skipBtn.textContent = '✨ Skip CAPTCHA ✨';
+            }
+            loadCaptchaRound();
+            var verifyBtn = document.getElementById('captchaVerify');
+            if (verifyBtn) verifyBtn.textContent = 'Verify';
+            var attemptsEl = document.getElementById('captchaAttempts');
+            if (attemptsEl) attemptsEl.textContent = '';
+        };
+
+        var captchaOverlay = document.getElementById('captchaOverlay');
+        if (captchaOverlay) {
+            captchaOverlay.addEventListener('click', function(e) { if (e.target === captchaOverlay) { e.stopPropagation(); e.preventDefault(); } });
+        }
+
+        var verifyBtn = document.getElementById('captchaVerify');
+        if (verifyBtn) {
+            verifyBtn.addEventListener('click', function() {
+                var content = document.getElementById('captchaContent');
+                var spinner = document.getElementById('captchaSpinner');
+                var attemptsEl = document.getElementById('captchaAttempts');
+
+                if (captchaTotalAttempts >= 5) {
+                    // After 5 attempts, let them through
+                    document.getElementById('captchaOverlay').classList.remove('active');
+                    showToast('🎉 CAPTCHA passed! You must be human!');
+                    return;
+                }
+
+                // Check if answer is correct
+                var round = rounds[window._captchaRound % rounds.length];
+                var isCorrect = false;
+                
+                if (round.type === "backwards") {
+                    var input = document.getElementById('backwardsInput');
+                    isCorrect = input && input.value.trim() === round.answer;
+                } else if (round.type === "code") {
+                    var input = document.getElementById('codeInput');
+                    isCorrect = input && input.value.trim() === round.answer;
+                } else if (round.type === "primes") {
+                    var selected = Array.from(document.querySelectorAll('.captcha-cell.selected')).map(c => c.textContent);
+                    isCorrect = round.answers.length === selected.length && round.answers.every(a => selected.includes(a));
+                } else {
+                    var selected = Array.from(document.querySelectorAll('.captcha-cell.selected'));
+                    if (round.answer) {
+                        isCorrect = selected.length === 1 && selected[0].textContent === round.answer;
+                    }
+                }
+
+                if (isCorrect) {
+                    // Success!
+                    document.getElementById('captchaOverlay').classList.remove('active');
+                    showToast('🎉 CAPTCHA passed! You must be human!');
+                    return;
+                }
+
+                if (content) content.style.display = 'none';
+                if (spinner) spinner.classList.add('active');
+
+                setTimeout(function() {
+                    if (spinner) spinner.classList.remove('active');
+                    if (content) content.style.display = '';
+                    captchaTotalAttempts++; window._captchaRound++;
+                    if (attemptsEl) attemptsEl.textContent = "Verification failed. Please try again. (Attempt " + captchaTotalAttempts + "/5)";
+                    if (captchaTotalAttempts >= 3) showToast("💡 Hint: Read the prompts carefully!");
+                    if (captchaTotalAttempts >= 4) verifyBtn.textContent = "I Give Up (Click to skip)";
+                    loadCaptchaRound();
+                }, 2000 + Math.random() * 2000);
+            });
+        }
+
+        // 2. TERMS & CONDITIONS - text changes while reading
+        var termsText = document.getElementById('termsText');
+        if (termsText) {
+            var legalese = '';
+            var absurdClauses = [
+                "The user hereby agrees to not enjoy this experience under any circumstances.",
+                "Your soul is non-refundable. No exceptions. No appeals. No crying.",
+                "Any resemblance to a functional website is purely coincidental.",
+                "ShopMart™ reserves the right to change these terms retroactively, in alternate dimensions, and on holidays.",
+                "By scrolling past this point, you agree to name your firstborn child 'ShopMart'.",
+                "Time spent on this website is considered a charitable donation to chaos.",
+                "ShopMart™ is not responsible for any existential crises triggered by this website.",
+                "All complaints will be printed, folded into paper airplanes, and thrown into the void.",
+                "The user agrees that 'close enough' is an acceptable unit of measurement.",
+                "ShopMart™ may or may not exist. This is not a guarantee of anything.",
+                "You waive all rights to a pleasant browsing experience, now and forever.",
+                "Any attempt to understand these terms constitutes a violation of these terms.",
+                "ShopMart™ operates in a quantum state: simultaneously the best and worst website.",
+                "These terms are binding in all jurisdictions, including fictional ones.",
+                "ShopMart™ reserves the right to add more terms while you're reading these terms."
+            ];
+            var lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+
+            for (var i = 0; i < 200; i++) {
+                var section = (Math.floor(i/7)+1) + "." + (i%7) + "." + String.fromCharCode(97+(i%26));
+                if (i === 100) { legalese += "Section 47.3: If you actually read this far, email dave@shopmart.fake for a prize. Just kidding, Dave doesn't exist.\n\n"; }
+                else if (i % 5 === 0) { legalese += "Section " + section + ": " + absurdClauses[i % absurdClauses.length] + "\n\n"; }
+                else if (i % 3 === 0) { legalese += "Section " + section + ": " + lorem + "\n\n"; }
+                else { legalese += "Section " + section + ".iii: The party of the first part (hereinafter referred to as 'the confused user') agrees, acknowledges, and irrevocably consents to the terms, conditions, stipulations, provisions, and general nonsense set forth herein, therein, and everywhere in between.\n\n"; }
+            }
+            termsText.textContent = legalese;
+        }
+
+        // Change terms text while scrolling
+        if (termsText) {
+            termsText.addEventListener('scroll', function() {
+                if (Math.random() > 0.95) {
+                    termsText.textContent = termsText.textContent.split('').reverse().join('');
+                    setTimeout(() => {
+                        termsText.textContent = termsText.textContent.split('').reverse().join('');
+                    }, 500);
+                }
+            });
+        }
+
+        var termsCheckbox = document.getElementById('termsCheckbox');
+        var termsAgreeBtn = document.getElementById('termsAgreeBtn');
+        var termsLabel = document.getElementById('termsLabel');
+        var checkboxClickTimes = [];
+
+        if (termsCheckbox) {
+            termsCheckbox.addEventListener('change', function() {
+                if (termsCheckbox.checked) {
+                    if (termsAgreeBtn) termsAgreeBtn.classList.add('enabled');
+                    checkboxClickTimes.push(Date.now());
+                    var now = Date.now();
+                    checkboxClickTimes = checkboxClickTimes.filter(function(t) { return now - t < 3000; });
+                    if (checkboxClickTimes.length < 10) {
+                        setTimeout(function() {
+                            var now2 = Date.now();
+                            checkboxClickTimes = checkboxClickTimes.filter(function(t) { return now2 - t < 3000; });
+                            if (checkboxClickTimes.length < 10) {
+                                termsCheckbox.checked = false;
+                                if (termsAgreeBtn) termsAgreeBtn.classList.remove('enabled');
+                                if (termsLabel) termsLabel.textContent = "Click faster! (10 clicks in 3 seconds required)";
+                            }
+                        }, 1000);
+                    }
+                } else { if (termsAgreeBtn) termsAgreeBtn.classList.remove('enabled'); }
+            });
+        }
+        if (termsAgreeBtn) {
+            termsAgreeBtn.addEventListener('click', function() {
+                if (!termsAgreeBtn.classList.contains('enabled')) return;
+                var o = document.getElementById('termsOverlay');
+                if (o) { o.classList.remove('active'); o.style.display = 'none'; }
+                showToast("📜 Terms accepted. Your soul has been processed.");
+                setTimeout(function() { window.showCaptcha(); }, 3000);
+            });
+        }
+
+        // 3. CHAT BOT
+        var chatBubble = document.getElementById('chatBubble');
+        var chatBox = document.getElementById('chatBox');
+        var chatSend = document.getElementById('chatSend');
+        var chatInput = document.getElementById('chatInput');
+        var chatMessages = document.getElementById('chatMessages');
+        var userMessageCount = 0;
+
+        function addBotMessage(text) {
+            if (!chatMessages) return;
+            var div = document.createElement('div');
+            div.style.cssText = 'text-align:left;margin-bottom:8px;';
+            var span = document.createElement('span');
+            span.style.cssText = 'background:#f0f0f0;padding:8px 12px;border-radius:12px;display:inline-block;color:#333;';
+            span.textContent = text;
+            div.appendChild(span);
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        function addUserMessage(text) {
+            if (!chatMessages) return;
+            var div = document.createElement('div');
+            div.style.cssText = 'text-align:right;margin-bottom:8px;';
+            var span = document.createElement('span');
+            span.style.cssText = 'background:#e94560;color:white;padding:8px 12px;border-radius:12px;display:inline-block;';
+            span.textContent = text;
+            div.appendChild(span);
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        function getBotResponse(msg) {
+            var m = msg.toLowerCase();
+            if (m.indexOf('help') !== -1) return "I'd love to help! Unfortunately, I'm not programmed to do that. 😊";
+            if (m.indexOf('price') !== -1 || m.indexOf('cost') !== -1) return "Great question! The price is $" + (Math.floor(Math.random()*999999)+1) + ". Or maybe not.";
+            if (m.indexOf('shipping') !== -1) return "We ship via carrier pigeon! Estimated delivery: 6-8 business centuries.";
+            if (m.indexOf('return') !== -1 || m.indexOf('refund') !== -1) return "Returns? 😂😂😂 That's a good one!";
+            if (m.indexOf('human') !== -1 || m.indexOf('person') !== -1 || m.indexOf('agent') !== -1) return "I AM a human! *beep boop* I mean... yes, totally human here.";
+            if (m.indexOf('complaint') !== -1 || m.indexOf('problem') !== -1 || m.indexOf('issue') !== -1 || m.indexOf('broken') !== -1) return "Have you tried turning yourself off and on again?";
+            var defaults = ["Interesting! Anyway, have you seen our new WiFi-Enabled Rock?","I'm sorry, I didn't understand that. I also won't understand if you rephrase it.","Let me transfer you to another bot who also can't help. Please hold... forever.","Error 503: Empathy module not found.","That's a great point! I'll file it under 'things we'll ignore'.","🎵 Please hold... 🎵 *elevator music intensifies*"];
+            return defaults[Math.floor(Math.random() * defaults.length)];
+        }
+        function handleChatSend() {
+            if (!chatInput) return;
+            var msg = chatInput.value.trim();
+            if (!msg) return;
+            addUserMessage(msg); chatInput.value = ''; userMessageCount++;
+            var cc = userMessageCount;
+            setTimeout(function() {
+                if (cc % 5 === 0) {
+                    addBotMessage("This chat will self-destruct in 5 seconds!");
+                    setTimeout(function() { if (chatMessages) { chatMessages.innerHTML = ''; addBotMessage("Chat history cleared for your inconvenience! 😊 How can I not help you?"); } }, 5000);
+                } else { addBotMessage(getBotResponse(msg)); }
+            }, 1000 + Math.random() * 2000);
+        }
+        if (chatBubble && chatBox) {
+            chatBubble.addEventListener('click', function() {
+                chatBox.classList.toggle('open');
+                if (chatBox.classList.contains('open')) setTimeout(function() { addBotMessage("What can I help you with? I definitely won't waste your time! 🤗"); }, 2000);
+            });
+        }
+        if (chatSend) chatSend.addEventListener('click', handleChatSend);
+        if (chatInput) chatInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') { e.preventDefault(); handleChatSend(); } });
+
+        // 4. VOLUME SLIDER (inverted + jitter)
+        var volumeSlider = document.getElementById('volumeSlider');
+        var volumeVal = document.getElementById('volumeVal');
+        if (volumeSlider) {
+            volumeSlider.addEventListener('input', function() {
+                var inv = 100 - parseInt(volumeSlider.value);
+                if (volumeVal) volumeVal.textContent = inv + '%';
+                if (inv === 50) showToast("🎯 You found the sweet spot! (Nothing happens though)");
+            });
+            setInterval(function() {
+                var v = Math.floor(Math.random() * 101);
+                volumeSlider.value = v;
+                if (volumeVal) volumeVal.textContent = (100 - v) + '%';
+            }, 5000);
+        }
+
+        // 5. CATEGORY DROPDOWN
+        var categoryDropdown = document.getElementById('categoryDropdown');
+        if (categoryDropdown) {
+            var cats = ["Electronics (0 items)","Clothing (-3 items)","Home & Garden (undefined)","Toys (NaN items)","Books (∞ items)","Sports (imaginary items)","Food (expired)","Other (classified)"];
+            var menu = categoryDropdown.querySelector('.hell-dropdown-menu');
+            cats.forEach(function(cat) {
+                var item = document.createElement('div');
+                item.className = 'hell-dropdown-item'; item.textContent = cat;
+                item.addEventListener('click', function(e) { e.stopPropagation(); menu.classList.remove('open'); categoryDropdown.style.transform = ''; showToast(cat + " — Coming Soon™ (since 2003)"); });
+                menu.appendChild(item);
+            });
+            var dBtn = categoryDropdown.querySelector('.hell-dropdown-btn');
+            if (dBtn) dBtn.addEventListener('click', function(e) {
+                e.stopPropagation(); menu.classList.toggle('open');
+                if (menu.classList.contains('open')) menu.style.transform = 'translate(' + (Math.random()*300-100) + 'px,' + (Math.random()*150-50) + 'px)';
+                else menu.style.transform = '';
+            });
+            document.addEventListener('click', function(e) { if (!categoryDropdown.contains(e.target)) { menu.classList.remove('open'); menu.style.transform = ''; } });
+        }
+
+        // 6. BONUS HORRORS - Safe but frustrating
+
+        // A. Random scroll jumps (less frequent)
+        setInterval(function() {
+            if (Math.random() > 0.7) {
+                window.scrollTo({ 
+                    top: Math.random() * Math.max(0, document.body.scrollHeight - window.innerHeight), 
+                    behavior: 'smooth' 
+                });
+                showToast('🔄 Auto-scrolling to recommended products!');
+            }
+        }, 20000);
+
+        // B. Product shuffle
+        setInterval(function() {
+            var g = document.getElementById('productGrid'); if (!g) return;
+            var c = Array.from(g.querySelectorAll('.product-card'));
+            for (var i = c.length-1; i > 0; i--) { var j = Math.floor(Math.random()*(i+1)); if (i!==j) g.insertBefore(c[i],c[j]); }
+        }, 20000);
+
+        // C. FAKE LOADING SCREEN - triggers occasionally
+        function showFakeLoader() {
+            var loader = document.getElementById('fakeLoader');
+            var progress = document.getElementById('loaderProgress');
+            var text = document.getElementById('loaderText');
+            var status = document.getElementById('loaderStatus');
+            
+            if (!loader) return;
+            loader.classList.add('active');
+            
+            var messages = [
+                "Optimizing your experience...",
+                "Downloading more RAM...",
+                "Contacting Dave...",
+                "Calculating shipping to Mars...",
+                "Teaching AI to feel emotions...",
+                "Baking cookies...",
+                "Reversing entropy...",
+                "Almost there...",
+                "Just a moment...",
+                "Loading..."
+            ];
+            
+            var progressVal = 0;
+            var interval = setInterval(function() {
+                progressVal += Math.random() * 15;
+                if (progressVal > 99) progressVal = 99; // Never quite reaches 100
+                if (progress) progress.style.width = progressVal + '%';
+                if (status) status.textContent = messages[Math.floor(Math.random() * messages.length)];
+                if (text) text.textContent = Math.floor(progressVal) + '% complete';
+                
+                if (progressVal >= 99) {
+                    clearInterval(interval);
+                    setTimeout(function() {
+                        loader.classList.remove('active');
+                        showToast('🎉 Loading complete! (Nothing changed)');
+                    }, 2000);
+                }
+            }, 1000);
+        }
+        
+        // Trigger fake loader occasionally
+        setTimeout(showFakeLoader, 30000);
+        setInterval(function() {
+            if (Math.random() > 0.7) showFakeLoader();
+        }, 60000);
+
+        // D. Right-click hijack
+        document.addEventListener('contextmenu', function(e) { 
+            e.preventDefault(); 
+            showToast("📋 Right-clicking is disabled for security reasons. (There are no security reasons.)"); 
+        });
+
+        // E. Selection prevention
+        document.addEventListener('selectstart', function() { 
+            showToast("📋 Copying is not allowed. Please type everything manually."); 
+        });
+
+        // F. Idle detection
+        var idleTimer;
+        function resetIdle() { 
+            clearTimeout(idleTimer); 
+            idleTimer = setTimeout(function() { 
+                showToast("👋 Welcome back! We missed you for those 10 seconds."); 
+            }, 10000); 
+        }
+        document.addEventListener('mousemove', resetIdle); 
+        document.addEventListener('keydown', resetIdle);
+        resetIdle();
+
+        // G. Tab title cycling
+        var titles = ["ShopMart™","(1) New Message!","DON'T LEAVE!","We miss you...","🔥 SALE ENDING NOW 🔥","Come back!","Your cart is lonely 😢"];
+        var ti = 0;
+        setInterval(function() { document.title = titles[ti % titles.length]; ti++; }, 3000);
+        
+        // H. Floating chaos emojis (slower)
+        function spawnFloatingEmoji() {
+            const emojis = ['🔥', '💀', '🤡', '💩', '🤪', '😱', '🌀', '⚡', '💢', '🎪'];
+            const emoji = document.createElement('div');
+            emoji.className = 'floating-emoji';
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = Math.random() * window.innerWidth + 'px';
+            emoji.style.top = Math.random() * window.innerHeight + 'px';
+            emoji.style.setProperty('--tx', (Math.random() * 400 - 200) + 'px');
+            emoji.style.setProperty('--ty', (Math.random() * 400 - 200) + 'px');
+            document.body.appendChild(emoji);
+            setTimeout(() => emoji.remove(), 8000);
+        }
+        setInterval(spawnFloatingEmoji, 5000);
+        
+    })();
+    </script>
+    <script>
+    (function() {
+        var steps = Array.from(document.querySelectorAll('.checkout-progress .progress-step'));
+        var state = {
+            step: 1,
+            unlocked: 1,
+            cart: [],
+            finalCode: '',
+            captchaMode: null,
+            captchaRound: 0
+        };
+
+        var overlays = {
+            cart: document.getElementById('cartOverlay'),
+            account: document.getElementById('accountOverlay'),
+            verifyAgain: document.getElementById('verifyAgainOverlay'),
+            payment: document.getElementById('paymentOverlay'),
+            final: document.getElementById('finalOverlay')
+        };
+
+        var cartCount = document.getElementById('cartCount');
+
+        function setProgress(step) {
+            state.step = step;
+            steps.forEach(function(el, idx) {
+                if (idx + 1 === step) el.classList.add('active');
+                else el.classList.remove('active');
+            });
+            var progressBar = document.querySelector('.checkout-progress');
+            if (progressBar) progressBar.setAttribute('title', 'Step ' + step + '/7');
+        }
+
+        function closeAllOverlays() {
+            Object.keys(overlays).forEach(function(k) {
+                if (overlays[k]) overlays[k].classList.remove('active');
+            });
+            var cap = document.getElementById('captchaOverlay');
+            if (cap) cap.classList.remove('active');
+        }
+
+        function hardSetCartCount() {
+            if (cartCount) cartCount.textContent = String(state.cart.length);
+        }
+
+        function canNavigateToStep(targetStep) {
+            if (targetStep === 1) return true;
+            if (targetStep === 2) return state.cart.length >= 3;
+            return targetStep <= state.unlocked;
+        }
+
+        function sanitizeDigits(text) {
+            return String(text || '').replace(/\D/g, '');
+        }
+
+        function randomCaseGlitch(e) {
+            var val = e.target.value;
+            if (!val || Math.random() < 0.60) return; // 40% chance of glitch (was 45%)
+            var idx = Math.floor(Math.random() * val.length);
+            var chars = val.split('');
+            chars[idx] = chars[idx] === chars[idx].toUpperCase() ? chars[idx].toLowerCase() : chars[idx].toUpperCase();
+            e.target.value = chars.join('');
+        }
+
+        function forceMiserableInput() {
+            document.querySelectorAll('.misery-jitter').forEach(function(inp) {
+                inp.addEventListener('input', randomCaseGlitch);
+            });
+        }
+
+        function rebuildAddToCartButtons() {
+            document.querySelectorAll('.product-card').forEach(function(card) {
+                var oldBtn = card.querySelector('.add-to-cart');
+                if (!oldBtn) return;
+                var btn = oldBtn.cloneNode(true);
+                oldBtn.parentNode.replaceChild(btn, oldBtn);
+                btn.addEventListener('click', function(ev) {
+                    ev.preventDefault();
+                    var nameEl = card.querySelector('.product-info h3');
+                    var priceEl = card.querySelector('.product-info .price');
+                    state.cart.push({
+                        name: nameEl ? nameEl.textContent : 'Unknown Product',
+                        price: priceEl ? priceEl.textContent : '$999.99'
+                    });
+                    hardSetCartCount();
+                    if (typeof showToast === 'function') showToast('Added to cart. Cart now has ' + state.cart.length + ' item(s).');
+                    if (Math.random() > 0.5) window.scrollBy({ top: 220, behavior: 'smooth' });
+                });
+            });
+        }
+
+        function rebuildCartIcon() {
+            var oldCartIcon = document.getElementById('cartIcon');
+            if (!oldCartIcon) return;
+            var newCartIcon = oldCartIcon.cloneNode(true);
+            oldCartIcon.parentNode.replaceChild(newCartIcon, oldCartIcon);
+            newCartIcon.addEventListener('click', function() {
+                if (state.cart.length >= 3) {
+                    openCartStep();
+                } else if (typeof showToast === 'function') {
+                    showToast('Add at least 3 items before cart step unlocks.');
+                }
+            });
+        }
+
+        function renderCartOverlay() {
+            var rows = document.getElementById('cartRows');
+            var ship = document.getElementById('shippingSelect');
+            var maze = document.getElementById('cartMazeArea');
+            if (rows) {
+                rows.innerHTML = '';
+                state.cart.forEach(function(item, i) {
+                    var tr = document.createElement('tr');
+                    tr.innerHTML = '<td>' + item.name + '</td><td>1</td><td>' + item.price + '</td>';
+                    rows.appendChild(tr);
+                });
+                var feeRow = document.createElement('tr');
+                feeRow.innerHTML = '<td>Mystery Frustration Fee</td><td>1</td><td>$77.77</td>';
+                rows.appendChild(feeRow);
+            }
+            if (ship) {
+                var opts = [
+                    'Snail Route (4-9 months)',
+                    'Confusing Priority (2-6 weeks)',
+                    'Express-ish (sometime soon)',
+                    'Teleport maybe (out of stock)'
+                ];
+                ship.innerHTML = '<option value="">Select shipping, reluctantly</option>';
+                opts.sort(function() { return Math.random() - 0.5; });
+                opts.forEach(function(o) {
+                    var op = document.createElement('option');
+                    op.value = o;
+                    op.textContent = o;
+                    ship.appendChild(op);
+                });
+            }
+            if (maze) {
+                maze.innerHTML = '';
+                for (var i = 0; i < 16; i++) {
+                    var row = document.createElement('div');
+                    row.className = 'maze-row';
+                    var left = document.createElement('span');
+                    left.textContent = 'Extra handling rule #' + (i + 1);
+                    var right = document.createElement('span');
+                    right.textContent = i % 3 === 0 ? '+$' + (i + 3) + '.11' : 'required';
+                    row.appendChild(left);
+                    row.appendChild(right);
+                    maze.appendChild(row);
+                }
+            }
+        }
+
+        function validateCartStep() {
+            var ship = document.getElementById('shippingSelect');
+            var tip = document.getElementById('warehouseTip');
+            var affirm = document.getElementById('cartAffirm');
+            var btn = document.getElementById('cartContinueBtn');
+            if (!btn || !ship || !tip || !affirm) return;
+            var ok = !!ship.value && Number(tip.value) === 87 && affirm.checked;
+            btn.disabled = !ok;
+        }
+
+        function openCartStep() {
+            if (state.cart.length < 3) {
+                if (typeof showToast === 'function') showToast('Need 3 items before entering cart misery.');
+                return;
+            }
+            closeAllOverlays();
+            setProgress(2);
+            renderCartOverlay();
+            if (overlays.cart) overlays.cart.classList.add('active');
+        }
+
+        var captchaRounds = [
+            { 
+                prompt: 'Select every tile containing "7"', 
+                cells: ['7','a','7','k','3','m','x','7','2'], 
+                correct: [0,2,7] 
+            },
+            { 
+                prompt: 'Select every tile containing "#"', 
+                cells: ['#','@','#','%','^','!','#','+','='], 
+                correct: [0,2,6] 
+            },
+            {
+                prompt: 'Select all squares that do NOT contain traffic lights',
+                cells: ['🚦','🚗','🚧','🌳','🚙','🚕','🏠','🚲','🌸'],
+                correct: [1,2,3,4,5,6,7,8],
+                invert: true
+            },
+            { 
+                prompt: 'Click the squares in REVERSE alphabetical order (Z to A)',
+                cells: ['🍎','🍌','🍒','🍇','🥝','🍋','🥭','🍊','🍑'],
+                correct: [8,7,6,5,4,3,2,1,0],
+            },
+            { 
+                prompt: 'Select only the four squares with the most similarities between the primary colors derived in the additive color model, aka RGB ',
+                cells: ['🟦','🟩','🟨','🟥','🟪','🟧','⬛','⬜','🟫'],
+                correct: [0,1,3],
+                trick: true
+            }
+        ];
+    
+        // Precompute correct order for alphabetical order rounds
+        captchaRounds.forEach(function(round) {
+            if (round.order) {
+                // Sort cells alphabetically (ascending)
+                var sorted = round.cells.slice().sort();
+                // If prompt indicates reverse order, reverse the sorted list
+                if (round.prompt && round.prompt.toLowerCase().includes('reverse')) {
+                    sorted = sorted.reverse();
+                }
+                // Map sorted emojis back to indices in original cells array
+                round.correct = sorted.map(function(emoji) {
+                    return round.cells.indexOf(emoji);
+                });
+            }
+        });
+        
+        // Captcha timer variables
+        var captchaTimeLeft = 30;
+        var captchaTimerInterval = null;
+        
+        function resetCaptchaTimer() {
+            captchaTimeLeft = 30;
+            var timer = document.getElementById('captchaTimer');
+            if (timer) {
+                timer.textContent = 'Time: 30s';
+                timer.classList.remove('warning');
+            }
+            if (captchaTimerInterval) clearInterval(captchaTimerInterval);
+            captchaTimerInterval = setInterval(function() {
+                captchaTimeLeft--;
+                if (timer) {
+                    timer.textContent = 'Time: ' + captchaTimeLeft + 's';
+                    if (captchaTimeLeft <= 10) {
+                        timer.classList.add('warning');
+                    }
+                }
+                if (captchaTimeLeft <= 0) {
+                    clearInterval(captchaTimerInterval);
+                    if (timer) timer.textContent = 'TIME\'S UP!';
+                    // Time out - retry the same round
+                    var attemptsEl = document.getElementById('captchaAttempts');
+                    if (attemptsEl) attemptsEl.textContent = 'Time expired! Try again. Misery is mandatory.';
+                    setTimeout(function() {
+                        renderCaptchaRound(); // retry same round
+                    }, 1500);
+                }
+            }, 1000);
+        }
+
+        function resetCaptchaUi() {
+            var content = document.getElementById('captchaContent');
+            var spinner = document.getElementById('captchaSpinner');
+            var skipWrap = document.getElementById('captchaSkipContainer');
+            var timer = document.getElementById('captchaTimer');
+            if (content) content.style.display = '';
+            if (spinner) spinner.classList.remove('active');
+            if (skipWrap) skipWrap.style.display = 'none';
+            if (timer) {
+                timer.textContent = 'Time: 30s';
+                timer.classList.remove('warning');
+            }
+            if (captchaTimerInterval) clearInterval(captchaTimerInterval);
+        }
+
+        function renderCaptchaRound() {
+            var grid = document.getElementById('captchaGrid');
+            var prompt = document.getElementById('captchaPrompt');
+            var title = document.querySelector('#captchaOverlay .captcha-box h3');
+            var attempts = document.getElementById('captchaAttempts');
+            var timer = document.getElementById('captchaTimer');
+            if (!grid || !prompt || !title) return;
+            var round = captchaRounds[state.captchaRound] || captchaRounds[0];
+            title.textContent = state.captchaMode === 'final' ? 'Final verification before order' : 'Step 3: Verify Humanity';
+            prompt.innerHTML = round.prompt;
+            grid.innerHTML = '';
+            grid.classList.remove('distorted');
+            
+            // Randomly apply visual distortion to make it harder
+            if (Math.random() > 0.5) {
+                setTimeout(() => grid.classList.add('distorted'), 500);
+            }
+            
+            var clickOrder = 0;
+            round.cells.forEach(function(val, idx) {
+                var cell = document.createElement('div');
+                cell.className = 'captcha-cell';
+                cell.textContent = val;
+                cell.setAttribute('data-idx', String(idx));
+                cell.setAttribute('data-click-order', '');
+                cell.addEventListener('click', function() {
+                    var isSelected = cell.classList.contains('selected');
+                    if (isSelected) {
+                        cell.classList.remove('selected');
+                        cell.setAttribute('data-click-order', '');
+                    } else {
+                        cell.classList.add('selected');
+                        clickOrder++;
+                        cell.setAttribute('data-click-order', String(clickOrder));
+                    }
+                });
+                grid.appendChild(cell);
+            });
+            if (attempts) attempts.textContent = '';
+            
+            // Reset timer for this round
+            resetCaptchaTimer();
+        }
+
+        function openCaptchaFor(mode) {
+            state.captchaMode = mode;
+            state.captchaRound = 0;
+            resetCaptchaUi();
+            renderCaptchaRound();
+            var overlay = document.getElementById('captchaOverlay');
+            if (overlay) overlay.classList.add('active');
+            setProgress(mode === 'final' ? 7 : 3);
+        }
+
+        function handleCaptchaVerify() {
+            var round = captchaRounds[state.captchaRound] || captchaRounds[0];
+            var selectedCells = document.querySelectorAll('#captchaGrid .captcha-cell.selected');
+            var attempts = document.getElementById('captchaAttempts');
+            
+            // For order-based challenges, check the order of selection
+            var ok = false;
+            if (round.order) {
+                // Must select in exact order specified in round.correct
+                // Get selected cells with their click order
+                var selectedWithOrder = Array.from(selectedCells).map(function(c) {
+                    return {
+                        idx: Number(c.getAttribute('data-idx')),
+                        order: Number(c.getAttribute('data-click-order')) || 0
+                    };
+                });
+                // Sort by click order (ascending)
+                selectedWithOrder.sort(function(a, b) { return a.order - b.order; });
+                var selectedOrder = selectedWithOrder.map(function(item) { return item.idx; });
+                ok = selectedOrder.length === round.correct.length &&
+                     selectedOrder.every(function(v, i) { return v === round.correct[i]; });
+            } else {
+                // For non-order challenges, just check which cells are selected (order doesn't matter)
+                var selectedIndices = Array.from(selectedCells).map(function(c) {
+                    return Number(c.getAttribute('data-idx'));
+                }).sort(function(a, b) { return a - b; });
+                var expected = round.correct.slice().sort(function(a, b) { return a - b; });
+                ok = selectedIndices.length === expected.length &&
+                     selectedIndices.every(function(v, i) { return v === expected[i]; });
+            }
+            
+            if (!ok) {
+                if (attempts) attempts.textContent = 'Wrong tiles. Try again. Misery is mandatory.';
+                renderCaptchaRound();
+                return;
+            }
+
+            state.captchaRound++;
+            if (state.captchaMode === 'step3' && state.captchaRound < captchaRounds.length) {
+                if (attempts) attempts.textContent = 'One more round because we do not trust you.';
+                renderCaptchaRound();
+                return;
+            }
+
+            if (state.captchaMode === 'step3') {
+                var ov = document.getElementById('captchaOverlay');
+                if (ov) ov.classList.remove('active');
+                if (captchaTimerInterval) clearInterval(captchaTimerInterval);
+                state.unlocked = Math.max(state.unlocked, 4);
+                setProgress(4);
+                if (overlays.account) overlays.account.classList.add('active');
+                if (typeof showToast === 'function') showToast('Step 3 completed. Account pain unlocked.');
+                return;
+            }
+
+            if (state.captchaMode === 'final') {
+                var finalAttempts = document.getElementById('captchaAttempts');
+                if (finalAttempts) finalAttempts.textContent = 'Captcha accepted. Rechecking...';
+                if (captchaTimerInterval) clearInterval(captchaTimerInterval);
+                setTimeout(function() {
+                    if (typeof showToast === 'function') showToast('Final captcha failed for mysterious reasons. Restarting everything.');
+                    hardResetJourney();
+                }, 1400);
+            }
+        }
+
+        function validateAccount() {
+            var name = document.getElementById('accName');
+            var email = document.getElementById('accEmail');
+            var pass = document.getElementById('accPass');
+            var pass2 = document.getElementById('accPass2');
+            var phrase = document.getElementById('accSuffering');
+            var btn = document.getElementById('accountContinueBtn');
+            var rules = document.getElementById('accountRules');
+            var strengthEl = document.getElementById('passwordStrength');
+            if (!name || !email || !pass || !pass2 || !phrase || !btn || !rules) return;
+
+            var passVal = pass.value;
+            var hasUgh = passVal.toLowerCase().indexOf('ugh') !== -1;
+            var hasNumber = /\d/.test(passVal);
+            var passOk = passVal.length >= 8 && hasUgh && hasNumber;
+            
+            // Fake password strength meter with misleading feedback
+            if (strengthEl && passVal.length > 0) {
+                // Misleading strength calculation (overestimates)
+                var hasUpper = /[A-Z]/.test(passVal);
+                var hasLower = /[a-z]/.test(passVal);
+                var hasSymbol = /[^A-Za-z0-9]/.test(passVal);
+                var complexityCount = [hasUpper, hasLower, hasNumber, hasSymbol].filter(Boolean).length;
+                
+                var fakeStrength = 0;
+                if (passVal.length >= 8) fakeStrength += 2;
+                else if (passVal.length >= 6) fakeStrength += 1;
+                if (hasUgh) fakeStrength += 3; // Overweight the "ugh" requirement
+                fakeStrength += complexityCount;
+                
+                var strengthText = '';
+                var strengthColor = '';
+                if (fakeStrength < 3) {
+                    strengthText = 'Weak 😔';
+                    strengthColor = '#e94560';
+                } else if (fakeStrength < 5) {
+                    strengthText = 'Good 🙂';
+                    strengthColor = '#ffa500';
+                } else if (fakeStrength < 7) {
+                    strengthText = 'Strong 💪';
+                    strengthColor = '#4CAF50';
+                } else {
+                    strengthText = 'VERY STRONG 🔐';
+                    strengthColor = '#2196F3';
+                }
+                // Misleading: says "PERFECT!" based on old criteria (still works)
+                if (hasUgh && complexityCount >= 2 && passVal.length >= 8) {
+                    strengthText = 'PERFECT! 🎯';
+                    strengthColor = '#9C27B0';
+                }
+                strengthEl.textContent = strengthText;
+                strengthEl.style.color = strengthColor;
+            }
+            
+            var emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value);
+            // Case-insensitive suffering phrase
+            var phraseOk = phrase.value.trim().toLowerCase() === 'i agree to suffer';
+            // Case-insensitive password matching
+            var passMatchOk = pass.value.toLowerCase() === pass2.value.toLowerCase() && passVal.length > 0;
+            var ok = name.value.trim().length === 8 && emailOk && passOk && passMatchOk && phraseOk;
+            btn.disabled = !ok;
+            
+            // Update checklist items in real-time
+            var checklistItems = rules.querySelectorAll('.checklist-item');
+            var updates = [
+                { rule: 'username', met: name.value.trim().length === 8 },
+                { rule: 'email', met: emailOk },
+                { rule: 'passLength', met: passVal.length >= 8 },
+                { rule: 'passUgh', met: hasUgh },
+                { rule: 'passNumber', met: hasNumber },
+                { rule: 'passMatch', met: passMatchOk },
+                { rule: 'suffering', met: phraseOk }
+            ];
+            
+            updates.forEach(function(update) {
+                var item = rules.querySelector('[data-rule="' + update.rule + '"]');
+                if (item) {
+                    item.textContent = (update.met ? '✅' : '❌') + item.textContent.substring(1);
+                }
+            });
+            
+            if (!ok) {
+                btn.classList.remove('valid');
+            } else {
+                // Add pulsing glow when valid
+                btn.classList.add('valid');
+            }
+        }
+
+        var verifyTickerTimer = null;
+        function newVerifyCode() {
+            state.finalCode = String(Math.floor(100000 + Math.random() * 900000));
+            var hint = document.getElementById('movingCodeHint');
+            if (!hint) return;
+            var phase = 0;
+            if (verifyTickerTimer) clearInterval(verifyTickerTimer);
+            verifyTickerTimer = setInterval(function() {
+                phase++;
+                var spacer = ' '.repeat((phase % 7) + 1);
+                hint.textContent = 'verification code:' + spacer + state.finalCode + spacer + 'type it before it changes mood';
+                hint.style.transform = 'translateX(' + ((phase % 10) - 5) * 4 + 'px) rotate(' + (((phase % 8) - 4) * 0.8) + 'deg)';
+                hint.style.fontSize = (11 + (phase % 4)) + 'px';
+            }, 500);
+        }
+
+        function validatePayment() {
+            var card = document.getElementById('payCard');
+            var name = document.getElementById('payName');
+            var exp = document.getElementById('payExp');
+            var cvv = document.getElementById('payCvv');
+            var country = document.getElementById('payCountry');
+            var agree = document.getElementById('payFakeAgree');
+            var btn = document.getElementById('paymentSubmitBtn');
+            if (!card || !name || !exp || !cvv || !country || !agree || !btn) return;
+
+            var cardOk = sanitizeDigits(card.value).length === 16;
+            var expOk = /^(0[1-9]|1[0-2])\/\d{2}$/.test(exp.value.trim());
+            var cvvOk = /^\d{3,4}$/.test(cvv.value.trim());
+            var ok = cardOk && name.value.trim().length >= 3 && expOk && cvvOk && !!country.value && agree.checked;
+            btn.disabled = !ok;
+        }
+
+        function fakeProcessingThenFinal() {
+            var loader = document.getElementById('fakeLoader');
+            var bar = document.getElementById('loaderProgress');
+            var text = document.getElementById('loaderText');
+            var status = document.getElementById('loaderStatus');
+            if (loader) loader.classList.add('active');
+            if (text) text.textContent = 'Pretending to charge card';
+            if (status) status.textContent = 'No real transaction is happening.';
+            var p = 0;
+            var timer = setInterval(function() {
+                p += 12;
+                if (p > 99) p = 99;
+                if (bar) bar.style.width = p + '%';
+                if (p === 99) {
+                    clearInterval(timer);
+                    setTimeout(function() {
+                        if (loader) loader.classList.remove('active');
+                        if (overlays.payment) overlays.payment.classList.remove('active');
+                        if (overlays.final) overlays.final.classList.add('active');
+                        state.unlocked = Math.max(state.unlocked, 7);
+                        setProgress(7);
+                    }, 1300);
+                }
+            }, 280);
+        }
+
+        function hardResetJourney() {
+            closeAllOverlays();
+            state.cart = [];
+            state.unlocked = 1;
+            hardSetCartCount();
+            setProgress(1);
+            ['accName','accEmail','accPass','accPass2','accSuffering','verifyAgainInput','payCard','payName','payExp','payCvv'].forEach(function(id) {
+                var el = document.getElementById(id);
+                if (el) el.value = '';
+            });
+            ['cartAffirm','payFakeAgree'].forEach(function(id) {
+                var el = document.getElementById(id);
+                if (el) el.checked = false;
+            });
+            var tip = document.getElementById('warehouseTip');
+            if (tip) tip.value = '12';
+            var tipVal = document.getElementById('warehouseTipVal');
+            if (tipVal) tipVal.textContent = '12';
+            if (typeof showToast === 'function') showToast('Restarted to Step 1. Please suffer through all 7 steps again.');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function bindFlowEvents() {
+            steps.forEach(function(stepEl) {
+                stepEl.addEventListener('click', function() {
+                    var target = Number(stepEl.getAttribute('data-step'));
+                    if (!canNavigateToStep(target)) {
+                        if (typeof showToast === 'function') showToast('That step is locked. Suffer through previous steps first.');
+                        return;
+                    }
+                    if (target === 1) {
+                        closeAllOverlays();
+                        setProgress(1);
+                        return;
+                    }
+                    if (target === 2) {
+                        openCartStep();
+                        return;
+                    }
+                    if (target === 3) {
+                        openCaptchaFor('step3');
+                        return;
+                    }
+                    if (target === 4) {
+                        closeAllOverlays();
+                        if (overlays.account) overlays.account.classList.add('active');
+                        setProgress(4);
+                        return;
+                    }
+                    if (target === 5) {
+                        closeAllOverlays();
+                        if (overlays.verifyAgain) overlays.verifyAgain.classList.add('active');
+                        if (!state.finalCode) newVerifyCode();
+                        setProgress(5);
+                        return;
+                    }
+                    if (target === 6) {
+                        closeAllOverlays();
+                        if (overlays.payment) overlays.payment.classList.add('active');
+                        setProgress(6);
+                        return;
+                    }
+                    if (target === 7) {
+                        if (overlays.final) overlays.final.classList.add('active');
+                        setProgress(7);
+                        return;
+                    }
+                    if (typeof showToast === 'function') showToast('Reach step ' + target + ' by completing current misery first.');
+                });
+            });
+
+            var ship = document.getElementById('shippingSelect');
+            var tip = document.getElementById('warehouseTip');
+            var tipVal = document.getElementById('warehouseTipVal');
+            var affirm = document.getElementById('cartAffirm');
+            var cartContinue = document.getElementById('cartContinueBtn');
+            if (ship) ship.addEventListener('change', function() {
+                validateCartStep();
+                if (Math.random() > 0.4) {
+                    var vals = Array.from(ship.options).map(function(o) { return { value: o.value, text: o.textContent }; });
+                    vals.sort(function() { return Math.random() - 0.5; });
+                    ship.innerHTML = '';
+                    vals.forEach(function(v) {
+                        var op = document.createElement('option');
+                        op.value = v.value;
+                        op.textContent = v.text;
+                        ship.appendChild(op);
+                    });
+                }
+            });
+            if (tip) tip.addEventListener('input', function() {
+                if (tipVal) tipVal.textContent = String(tip.value);
+                validateCartStep();
+            });
+            if (affirm) affirm.addEventListener('change', validateCartStep);
+            if (cartContinue) cartContinue.addEventListener('click', function() {
+                state.unlocked = Math.max(state.unlocked, 3);
+                if (overlays.cart) overlays.cart.classList.remove('active');
+                openCaptchaFor('step3');
+            });
+
+            ['accName','accEmail','accPass','accPass2','accSuffering'].forEach(function(id) {
+                var el = document.getElementById(id);
+                if (el) el.addEventListener('input', validateAccount);
+            });
+            var accountContinue = document.getElementById('accountContinueBtn');
+            if (accountContinue) accountContinue.addEventListener('click', function() {
+                if (overlays.account) overlays.account.classList.remove('active');
+                if (overlays.verifyAgain) overlays.verifyAgain.classList.add('active');
+                state.unlocked = Math.max(state.unlocked, 5);
+                setProgress(5);
+                newVerifyCode();
+            });
+
+            var verifyInput = document.getElementById('verifyAgainInput');
+            var verifyResend = document.getElementById('verifyAgainResendBtn');
+            var verifyContinue = document.getElementById('verifyAgainContinueBtn');
+            if (verifyResend) verifyResend.addEventListener('click', function() {
+                newVerifyCode();
+                if (typeof showToast === 'function') showToast('Code replaced with a new one. Start over.');
+            });
+            if (verifyContinue) verifyContinue.addEventListener('click', function() {
+                if (!verifyInput || verifyInput.value.trim() !== state.finalCode) {
+                    if (typeof showToast === 'function') showToast('Wrong code. Read the moving text carefully.');
+                    return;
+                }
+                if (overlays.verifyAgain) overlays.verifyAgain.classList.remove('active');
+                if (overlays.payment) overlays.payment.classList.add('active');
+                state.unlocked = Math.max(state.unlocked, 6);
+                setProgress(6);
+            });
+
+            ['payCard','payName','payExp','payCvv','payCountry'].forEach(function(id) {
+                var el = document.getElementById(id);
+                if (el) el.addEventListener('input', validatePayment);
+                if (el) el.addEventListener('change', validatePayment);
+            });
+            var payAgree = document.getElementById('payFakeAgree');
+            if (payAgree) payAgree.addEventListener('change', validatePayment);
+
+            var payBtn = document.getElementById('paymentSubmitBtn');
+            if (payBtn) {
+                payBtn.addEventListener('mousemove', function(e) {
+                    if (payBtn.disabled) return;
+                    var rect = payBtn.getBoundingClientRect();
+                    var dx = e.clientX - (rect.left + rect.width / 2);
+                    var dy = e.clientY - (rect.top + rect.height / 2);
+                    var d = Math.sqrt(dx * dx + dy * dy);
+                    if (d < 85) {
+                        payBtn.style.left = ((Math.random() * 120) - 60) + 'px';
+                        payBtn.style.top = ((Math.random() * 60) - 30) + 'px';
+                    }
+                });
+                payBtn.addEventListener('click', function() {
+                    fakeProcessingThenFinal();
+                });
+            }
+
+            var verifyBtn = document.getElementById('captchaVerify');
+            if (verifyBtn) {
+                var cleanVerify = verifyBtn.cloneNode(true);
+                verifyBtn.parentNode.replaceChild(cleanVerify, verifyBtn);
+                cleanVerify.addEventListener('click', handleCaptchaVerify);
+            }
+
+            var openFinal = document.getElementById('openFinalCaptchaBtn');
+            if (openFinal) openFinal.addEventListener('click', function() {
+                if (overlays.final) overlays.final.classList.remove('active');
+                openCaptchaFor('final');
+            });
+        }
+
+        forceMiserableInput();
+        rebuildAddToCartButtons();
+        rebuildCartIcon();
+        bindFlowEvents();
+        hardSetCartCount();
+        setProgress(1);
+
+        window.showCaptcha = function() {
+            if (state.step === 3) openCaptchaFor('step3');
+            else if (state.step === 7) openCaptchaFor('final');
+            else if (typeof showToast === 'function') showToast('this was a weird error done by the AI, its changed now.');
+        };
+
+        setInterval(hardSetCartCount, 800);
+    })();
+    </script>
+</body>
+</html>
