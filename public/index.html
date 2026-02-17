@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🤮 WORST WEBSITE EVER - PREPARE TO SUFFER 🤮</title>
+    <title>ShopMart - Our AMAZING website </title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Press+Start+2P&family=Creepster&display=swap');
 
@@ -11,29 +11,22 @@
 
         body {
             font-family: 'Comic Neue', 'Comic Sans MS', cursive;
-            background: linear-gradient(45deg, #ff00ff 0%, #00ff00 10%, #ffff00 20%, #ff0000 30%, #00ffff 40%, #ff00ff 50%, #00ff00 60%, #ffff00 70%, #ff0000 80%, #00ffff 90%, #ff00ff 100%);
-            background-size: 400% 400%;
+            /* Ugly clashing colors - no animation */
+            background: #ff00ff;
+            background: repeating-linear-gradient(
+                90deg,
+                #ff00ff 0px, #ff00ff 50px,
+                #00ff00 50px, #00ff00 100px,
+                #ffff00 100px, #ffff00 150px,
+                #ff0000 150px, #ff0000 200px
+            );
             overflow-x: hidden;
             user-select: none;
             -webkit-user-select: none;
-            animation: vomitBackground 15s ease infinite, bodyShake 0.5s infinite;
+            /* No more shaking or strobing - seizure safe! */
         }
 
-        /* VOMIT-INDUCING BACKGROUND */
-        @keyframes vomitBackground {
-            0% { background-position: 0% 50%; filter: hue-rotate(0deg) saturate(1.5) contrast(1.2); }
-            25% { background-position: 50% 100%; filter: hue-rotate(20deg) saturate(1.8) contrast(1.3); }
-            50% { background-position: 100% 50%; filter: hue-rotate(40deg) saturate(1.6) contrast(1.2); }
-            75% { background-position: 50% 0%; filter: hue-rotate(20deg) saturate(1.9) contrast(1.3); }
-            100% { background-position: 0% 50%; filter: hue-rotate(0deg) saturate(1.5) contrast(1.2); }
-        }
-        
-        @keyframes bodyShake {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(-2px, 2px) rotate(-0.5deg); }
-            50% { transform: translate(2px, -2px) rotate(0.5deg); }
-            75% { transform: translate(-2px, -2px) rotate(-0.5deg); }
-        }
+        /* Removed vomitBackground and bodyShake animations to prevent seizures */
 
         /* CUSTOM CURSOR - slower, no blinking */
         #fakeCursor {
@@ -42,9 +35,9 @@
             pointer-events: none; z-index: 999999;
             transition: left 0.07s linear, top 0.07s linear;
             mix-blend-mode: difference; background: rgba(255,0,255,0.15);
-            animation: cursorSpin 4s linear infinite;
+            /* Removed cursorSpin animation */
+            transform: rotate(15deg);
         }
-        @keyframes cursorSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         #fakeCursorInner {
             position: fixed; width: 12px; height: 12px;
             background: cyan; border-radius: 50%;
@@ -70,49 +63,45 @@
                 transparent 1px,
                 transparent 2px
             );
-            animation: scanlines 3s infinite linear;
+            /* Removed scanlines animation */
         }
-        @keyframes scanlines { 0% { transform: translateY(0); } 100% { transform: translateY(4px); } }
 
         .distortion-wave {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             pointer-events: none; z-index: 999800;
             background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), transparent 0%, rgba(255,255,0,0.1) 20%, transparent 40%);
-            animation: wavePulse 3s infinite ease-in-out;
+            /* Removed wavePulse animation */
         }
-        @keyframes wavePulse { 0%, 100% { transform: scale(1); opacity: 0.3; } 50% { transform: scale(1.3); opacity: 0.6; } }
 
         /* COOKIE BANNER - no flashing */
         #cookieBanner {
             position: fixed; bottom: 0; left: 0; width: 100%;
             background: #1a1a2e; color: white; padding: 30px;
             z-index: 100000; font-size: 14px; border-top: 4px solid #e94560;
-            animation: bannerWobble 4s infinite ease-in-out;
+            /* Removed bannerWobble animation */
+            transform: rotate(0.5deg);
         }
-        @keyframes bannerWobble { 0%, 100% { transform: translateX(0) rotate(0deg); } 25% { transform: translateX(-3px) rotate(-0.5deg); } 75% { transform: translateX(3px) rotate(0.5deg); } }
         #cookieBanner h3 { margin-bottom: 10px; font-size: 18px; }
         #cookieBanner .cookie-btns { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
         #cookieBanner button { padding: 10px 24px; border: none; border-radius: 4px; cursor: none !important; font-size: 14px; font-family: inherit; transition: all 0.3s; }
         .cookie-accept { background: #333 !important; color: #555 !important; font-size: 8px !important; padding: 4px 8px !important; }
         .cookie-reject { background: #333 !important; color: #555 !important; font-size: 6px !important; padding: 2px 4px !important; }
-        .cookie-manage { background: #e94560 !important; color: white !important; font-size: 18px !important; padding: 15px 40px !important; animation: pulse 2s infinite; }
-        @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.05)} }
+        .cookie-manage { background: #e94560 !important; color: white !important; font-size: 18px !important; padding: 15px 40px !important; /* Removed pulse animation */ transform: scale(1.05); }
 
-        /* NEWSLETTER POPUP - slow rotation, no flashing */
+        /* NEWSLETTER POPUP - no rotation or flashing */
         .popup-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.7); z-index: 99999;
             display: flex; align-items: center; justify-content: center;
-            animation: popupSpin 30s linear infinite;
+            /* Removed popupSpin animation */
         }
-        @keyframes popupSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         .popup-box {
             background: white; padding: 40px; border-radius: 12px;
             max-width: 500px; width: 90%; text-align: center; position: relative;
-            animation: popupWobble 4s infinite ease-in-out;
+            /* Removed popupWobble animation */
             border: 3px solid #e94560;
+            transform: rotate(-2deg) scale(1.05);
         }
-        @keyframes popupWobble { 0%, 100% { transform: rotate(-1deg) scale(1); } 50% { transform: rotate(1deg) scale(1.02); } }
         .popup-box h2 { font-size: 28px; margin-bottom: 10px; color: #e94560; }
         .popup-box p { font-size: 16px; color: #666; margin-bottom: 20px; }
         .popup-box input {
@@ -126,15 +115,13 @@
         .popup-close { position: absolute; top: 8px; right: 12px; font-size: 10px; color: #eee; cursor: none !important; background: none; border: none; font-family: inherit; }
 
         /* CHAT WIDGET */
-        #chatWidget { position: fixed; bottom: 120px; right: 20px; z-index: 99998; animation: widgetBounce 2s infinite ease-in-out; }
-        @keyframes widgetBounce { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-15px) rotate(5deg); } }
+        #chatWidget { position: fixed; bottom: 120px; right: 20px; z-index: 99998; /* Removed widgetBounce animation */ transform: rotate(3deg); }
         #chatBubble {
             width: 70px; height: 70px; background: #e94560; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             font-size: 30px; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            animation: chatBounce 3s infinite ease-in-out;
+            /* Removed chatBounce animation */
         }
-        @keyframes chatBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
         #chatBox {
             display: none; position: absolute; bottom: 80px; right: 0;
             width: 320px; height: 400px; background: white; border-radius: 12px;
@@ -148,65 +135,47 @@
         .chat-input-row input { flex: 1; border: none; padding: 12px; font-size: 14px; font-family: inherit; outline: none; }
         .chat-input-row button { background: #e94560; color: white; border: none; padding: 12px 18px; font-family: inherit; cursor: none !important; }
 
-        /* NAVBAR - HORRIFIC VERSION */
+        /* NAVBAR - HORRIFIC VERSION (no strobing) */
         .navbar {
             background: repeating-linear-gradient(45deg, #ff00ff 0px, #00ff00 10px, #ffff00 20px, #ff0000 30px, #00ffff 40px);
             padding: 15px 30px; display: flex;
             align-items: center; justify-content: space-between;
             box-shadow: 0 0 30px rgba(255,0,255,0.8), 0 0 60px rgba(0,255,0,0.6);
             position: sticky; top: 0; z-index: 1000;
-            animation: navbarGlitch 5s infinite, navbarColorShift 10s infinite;
+            /* Removed glitch and colorShift animations */
             border-bottom: 10px dotted #ff00ff;
-        }
-        @keyframes navbarGlitch {
-            0%, 95%, 100% { transform: translate(0) skew(0deg); }
-            96% { transform: translate(-2px, 1px) skew(-1deg); }
-            97% { transform: translate(2px, -1px) skew(1deg); }
-            98% { transform: translate(-1px, 1px) skew(-1deg); }
-        }
-        @keyframes navbarColorShift {
-            0% { filter: hue-rotate(0deg) saturate(2); }
-            50% { filter: hue-rotate(30deg) saturate(3); }
-            100% { filter: hue-rotate(0deg) saturate(2); }
+            transform: skewX(-2deg);
         }
         .navbar .logo {
             font-size: 28px; font-weight: bold;
             background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff00ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: logoSpin 2s linear infinite, logoGlitch 0.5s infinite;
+            /* Removed logoSpin and logoGlitch animations */
             display: inline-block;
             text-shadow: 3px 3px 0 #ff00ff, -3px -3px 0 #00ffff;
-        }
-        @keyframes logoSpin { from { transform: rotateY(0deg) scale(1); } to { transform: rotateY(360deg) scale(1.2); } }
-        @keyframes logoGlitch {
-            0%, 100% { transform: translate(0); }
-            25% { transform: translate(-3px, 3px); }
-            50% { transform: translate(3px, -3px); }
-            75% { transform: translate(-3px, -3px); }
+            transform: rotateZ(3deg) scale(1.1);
         }
         .navbar .nav-links { display: flex; gap: 25px; align-items: center; }
         .navbar .nav-links a { color: #333; text-decoration: none; font-size: 16px; position: relative; transition: transform 0.15s; display: inline-block; }
         .navbar .search-bar { display: flex; border: 2px solid #ddd; border-radius: 25px; overflow: hidden; }
         .navbar .search-bar input { border: none; padding: 8px 15px; font-size: 14px; width: 200px; font-family: inherit; outline: none; }
         .navbar .search-bar button { background: #e94560; color: white; border: none; padding: 8px 18px; cursor: none !important; font-family: inherit; }
-        .cart-icon { font-size: 24px; position: relative; cursor: none !important; animation: cartShake 2s infinite ease-in-out; }
-        @keyframes cartShake { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+        .cart-icon { font-size: 24px; position: relative; cursor: none !important; /* Removed cartShake animation */ transform: rotate(-5deg); }
         .cart-count {
             position: absolute; top: -8px; right: -10px; background: #e94560;
             color: white; font-size: 11px; width: 20px; height: 20px;
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            animation: countPulse 2s infinite ease-in-out;
+            /* Removed countPulse animation */
+            transform: scale(1.2);
         }
-        @keyframes countPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.3); } }
 
         /* PROMO BANNER */
-        .promo-banner { background: linear-gradient(90deg, #e94560, #c23152); color: white; text-align: center; padding: 12px; font-size: 16px; letter-spacing: 1px; animation: bannerScroll 8s linear infinite; white-space: nowrap; overflow: hidden; }
-        @keyframes bannerScroll { 0% { text-indent: 100%; } 100% { text-indent: -100%; } }
+        .promo-banner { background: linear-gradient(90deg, #e94560, #c23152); color: white; text-align: center; padding: 12px; font-size: 16px; letter-spacing: 1px; /* Removed bannerScroll animation */ white-space: nowrap; overflow: hidden; text-indent: 0; }
+        .promo-banner strong { animation: none; }
 
         /* PRODUCT GRID */
-        .section-title { font-size: 32px; text-align: center; margin: 40px 0 30px; color: #1a1a2e; animation: titleScale 3s infinite ease-in-out; }
-        @keyframes titleScale { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .section-title { font-size: 32px; text-align: center; margin: 40px 0 30px; color: #1a1a2e; /* Removed titleScale animation */ transform: scale(1.05) rotate(-1deg); }
         .product-grid {
             display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 25px; padding: 0 40px 40px; max-width: 1200px; margin: 0 auto;
@@ -216,27 +185,13 @@
             border-radius: 12px; overflow: hidden;
             box-shadow: 0 0 20px rgba(255,0,255,0.8), 0 0 40px rgba(0,255,0,0.6), 0 0 60px rgba(255,255,0,0.4);
             transition: transform 0.1s, box-shadow 0.1s;
-            animation: cardFloat 1s infinite ease-in-out, cardRotate 3s infinite, cardColorPulse 2s infinite;
+            /* Removed cardFloat, cardRotate, cardColorPulse animations */
             border: 5px dashed #ff00ff;
-        }
-        @keyframes cardFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-20px) rotate(-5deg); }
-            50% { transform: translateY(0) rotate(5deg); }
-            75% { transform: translateY(-20px) rotate(-5deg); }
-        }
-        @keyframes cardRotate {
-            0%, 100% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(5deg) scale(1.1); }
-        }
-        @keyframes cardColorPulse {
-            0%, 100% { filter: hue-rotate(0deg) saturate(2) brightness(1.1); }
-            50% { filter: hue-rotate(20deg) saturate(2.5) brightness(1.2); }
+            transform: rotate(-3deg) scale(0.95);
         }
         .product-card:hover {
             transform: translateY(-10px) scale(1.2) rotate(10deg);
             box-shadow: 0 0 50px rgba(255,0,255,1), 0 0 100px rgba(0,255,0,1);
-            animation-play-state: paused;
         }
         .product-img {
             width: 100%; height: 200px; background: #f5f5f5;
@@ -246,9 +201,9 @@
         .product-badge {
             position: absolute; top: 10px; left: 10px; background: #e94560;
             color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;
-            animation: badgeSpin 3s linear infinite;
+            /* Removed badgeSpin animation */
+            transform: rotate(-10deg) scale(1.2);
         }
-        @keyframes badgeSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         .product-info { padding: 15px; }
         .product-info h3 { font-size: 18px; color: #1a1a2e; margin-bottom: 6px; }
         .product-info .price { font-size: 22px; color: #e94560; font-weight: bold; }
@@ -265,19 +220,10 @@
             cursor: none !important;
             border-radius: 0 0 12px 12px;
             transition: all 0.1s;
-            animation: buttonRainbow 10s linear infinite, buttonShake 0.3s infinite;
+            /* Removed buttonRainbow and buttonShake animations */
             text-shadow: 2px 2px 4px #000, -2px -2px 4px #fff;
             font-weight: bold;
-        }
-        @keyframes buttonRainbow {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
-        @keyframes buttonShake {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(-2px, 2px) rotate(-2deg); }
-            50% { transform: translate(2px, -2px) rotate(2deg); }
-            75% { transform: translate(-2px, -2px) rotate(-2deg); }
+            transform: skewX(5deg);
         }
         .add-to-cart:hover {
             background: linear-gradient(90deg, #ffff00, #ff00ff, #00ffff, #ff0000);
@@ -292,8 +238,7 @@
             display: none; align-items: center; justify-content: center;
         }
         .captcha-overlay.active { display: flex; }
-        .captcha-box { background: white; padding: 30px; border-radius: 12px; max-width: 420px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.3); animation: captchaBoxWobble 5s infinite ease-in-out; }
-        @keyframes captchaBoxWobble { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 25% { transform: translate(-3px, -3px) rotate(-0.5deg); } 75% { transform: translate(3px, 3px) rotate(0.5deg); } }
+        .captcha-box { background: white; padding: 30px; border-radius: 12px; max-width: 420px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.3); /* Removed captchaBoxWobble animation */ transform: rotate(-1deg); }
         .captcha-box h3 { font-size: 20px; margin-bottom: 5px; color: #1a1a2e; }
         .captcha-box .captcha-subtitle { font-size: 13px; color: #888; margin-bottom: 20px; }
         .captcha-timer { 
@@ -302,11 +247,9 @@
             color: #e94560; 
             margin-bottom: 10px; 
             text-align: center;
-            animation: timerPulse 1s infinite;
+            /* Removed timerPulse animation */
         }
-        .captcha-timer.warning { color: #ff0000; animation: timerBlink 0.5s infinite; }
-        @keyframes timerPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
-        @keyframes timerBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .captcha-timer.warning { color: #ff0000; /* Removed timerBlink animation */ }
         .captcha-grid {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
             margin-bottom: 15px; border: 3px solid #ddd; border-radius: 4px; overflow: hidden;
@@ -317,14 +260,9 @@
             cursor: none !important; transition: all 0.15s; position: relative;
         }
         .captcha-grid.distorted .captcha-cell {
-            animation: cellDistort 0.3s infinite;
+            /* Removed cellDistort animation */
             filter: blur(0.5px) hue-rotate(10deg) saturate(1.2);
-        }
-        @keyframes cellDistort {
-            0%, 100% { transform: translateY(0) scale(1); }
-            25% { transform: translateY(-1px) scale(1.02); }
-            50% { transform: translateY(1px) scale(0.98); }
-            75% { transform: translateY(-1px) scale(1.01); }
+            transform: translateY(1px) scale(1.01);
         }
         .captcha-cell:hover { filter: brightness(0.9); transform: scale(1.05); }
         .captcha-cell.selected { outline: 3px solid #4285f4; outline-offset: -3px; }
@@ -338,8 +276,7 @@
         .captcha-attempts { font-size: 12px; color: #e94560; margin-top: 10px; clear: both; }
         .captcha-spinner { display: none; text-align: center; padding: 30px; font-size: 14px; color: #666; }
         .captcha-spinner.active { display: block; }
-        .spinner { width: 40px; height: 40px; border: 4px solid #ddd; border-top-color: #4285f4; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 15px; }
-        @keyframes spin { to{transform:rotate(360deg)} }
+        .spinner { width: 40px; height: 40px; border: 4px solid #ddd; border-top-color: #4285f4; border-radius: 50%; /* Removed spin animation */ margin: 0 auto 15px; border-style: dotted; }
 
         /* SKIP BUTTON - evades but doesn't teleport crazily */
         .captcha-skip-btn {
@@ -373,8 +310,7 @@
             display: none; align-items: center; justify-content: center;
         }
         #termsOverlay.active { display: flex; }
-        .terms-box { background: white; padding: 30px; border-radius: 12px; max-width: 600px; width: 90%; animation: termsBoxWobble 6s infinite ease-in-out; }
-        @keyframes termsBoxWobble { 0%, 100% { transform: rotate(-0.5deg); } 50% { transform: rotate(0.5deg); } }
+        .terms-box { background: white; padding: 30px; border-radius: 12px; max-width: 600px; width: 90%; /* Removed termsBoxWobble animation */ transform: rotate(0.5deg); }
         .terms-box h2 { font-size: 22px; margin-bottom: 15px; color: #1a1a2e; }
         .terms-scroll { height: 300px; overflow-y: auto; border: 1px solid #ddd; padding: 15px; font-size: 5px; color: #ccc; margin-bottom: 15px; line-height: 1.2; }
         .terms-agree-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
@@ -388,9 +324,9 @@
             position: fixed; bottom: 120px; left: 20px; background: white;
             padding: 15px; border-radius: 12px; box-shadow: 0 2px 15px rgba(0,0,0,0.15);
             z-index: 50000; width: 200px;
-            animation: volumeControlFloat 5s infinite ease-in-out;
+            /* Removed volumeControlFloat animation */
+            transform: rotate(-2deg);
         }
-        @keyframes volumeControlFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
         #volumeControl label { font-size: 13px; color: #333; display: block; margin-bottom: 8px; }
         #volumeSlider { width: 100%; -webkit-appearance: none; appearance: none; height: 6px; border-radius: 3px; background: #ddd; outline: none; }
         #volumeSlider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 18px; height: 18px; border-radius: 50%; background: #e94560; cursor: none !important; }
@@ -423,22 +359,12 @@
             cursor: none !important; 
             font-family: inherit; 
             position: relative;
-            animation: ageSubmitWobble 3s infinite ease-in-out, ageSubmitShrink 5s infinite ease-in-out;
+            /* Removed ageSubmitWobble and ageSubmitShrink animations */
             transition: transform 0.1s;
-        }
-        @keyframes ageSubmitWobble { 
-            0%, 100% { transform: translateX(0) rotate(-2deg); } 
-            25% { transform: translateX(30px) rotate(1deg); } 
-            50% { transform: translateX(0) rotate(2deg); } 
-            75% { transform: translateX(-30px) rotate(-1deg); } 
-        }
-        @keyframes ageSubmitShrink {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(0.7); }
+            transform: translateX(20px) rotate(-3deg);
         }
         /* Make button grow on hover so users can catch it */
         #ageSubmit:hover {
-            animation-play-state: paused;
             transform: scale(1.2) !important;
             box-shadow: 0 0 30px #e94560;
         }
@@ -471,8 +397,7 @@
             width: 30px; height: 30px; border-radius: 50%; background: #ddd;
             display: flex; align-items: center; justify-content: center; font-size: 14px; color: white;
         }
-        .progress-step.active .step-num { background: #e94560; animation: stepNumActive 2s infinite ease-in-out; }
-        @keyframes stepNumActive { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+        .progress-step.active .step-num { background: #e94560; /* Removed stepNumActive animation */ transform: scale(1.2); }
         .progress-line { width: 60px; height: 2px; background: #ddd; margin: 0 5px; }
 
         /* DROPDOWN */
@@ -499,11 +424,7 @@
             font-size: 40px;
             pointer-events: none;
             z-index: 999950;
-            animation: floatEmoji 8s linear infinite;
-        }
-        @keyframes floatEmoji {
-            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-            100% { transform: translate(var(--tx), var(--ty)) rotate(720deg); opacity: 0; }
+            /* Removed floatEmoji animation - emojis now stay static */
         }
 
         /* FAKE LOADING SCREEN */
@@ -524,16 +445,15 @@
             border: 6px solid rgba(255,255,255,0.1);
             border-top-color: #e94560;
             border-radius: 50%;
-            animation: loaderSpin 1.5s linear infinite;
+            /* Removed loaderSpin animation */
             margin-bottom: 30px;
+            border-style: dashed;
         }
-        @keyframes loaderSpin { to { transform: rotate(360deg); } }
         .loader-text {
             font-size: 24px;
             margin-bottom: 20px;
-            animation: loaderPulse 2s infinite;
+            /* Removed loaderPulse animation */
         }
-        @keyframes loaderPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
         .loader-progress {
             width: 300px; height: 20px;
             background: rgba(255,255,255,0.1);
@@ -564,9 +484,9 @@
             font-size: 14px;
             z-index: 99998;
             cursor: none !important;
-            animation: misleadingFloat 4s infinite ease-in-out;
+            /* Removed misleadingFloat animation */
+            transform: translateY(-5px) rotate(2deg);
         }
-        @keyframes misleadingFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
         /* CHECKOUT NIGHTMARE FLOW */
         .misery-overlay {
@@ -593,11 +513,7 @@
                 linear-gradient(90deg, rgba(255,255,255,0.08), rgba(0,0,0,0.15));
             box-shadow: 0 0 0 6px #001eff, 0 10px 40px rgba(0,0,0,0.55);
             transform: rotate(-0.7deg);
-            animation: miseryCardTilt 6s ease-in-out infinite;
-        }
-        @keyframes miseryCardTilt {
-            0%,100% { transform: rotate(-0.7deg) scale(1); }
-            50% { transform: rotate(0.7deg) scale(1.01); }
+            /* Removed miseryCardTilt animation */
         }
         .misery-card h2 {
             margin-bottom: 10px;
@@ -652,12 +568,9 @@
             filter: grayscale(0.8);
         }
         .misery-btn.valid {
-            animation: validPulse 1.2s infinite ease-in-out;
+            /* Removed validPulse animation */
             box-shadow: 0 0 30px rgba(255, 0, 95, 0.9), 0 0 60px rgba(15, 118, 255, 0.6);
-        }
-        @keyframes validPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.03); }
+            transform: scale(1.03);
         }
         .misery-note {
             margin-top: 10px;
@@ -706,8 +619,9 @@
             padding: 12px;
             color: #fff;
             pointer-events: auto;
-            animation: temuFloat 3.8s ease-in-out infinite;
+            /* Removed temuFloat animation */
             transform-origin: center;
+            transform: rotate(-2deg);
         }
         .temu-popup h4 {
             font-size: 17px;
@@ -868,11 +782,11 @@
 
     <div id="temuPopupLayer"></div>
 
-    <!-- STEP 2: CART NIGHTMARE -->
+    <!-- STEP 2: CART -->
     <div class="misery-overlay" id="cartOverlay">
         <div class="misery-card">
-            <h2>Step 2: Cart Navigation Nightmare</h2>
-            <p>You made it to cart. Now prove you can navigate this mess.</p>
+            <h2>Step 2: Your Shopping Cart</h2>
+            <p>Please review your items before continuing.</p>
             <table class="misery-table">
                 <thead>
                     <tr><th>Product</th><th>Qty</th><th>Subtotal</th></tr>
@@ -893,16 +807,16 @@
             <div id="cartMazeArea"></div>
             <label style="display:flex;gap:8px;align-items:flex-start;margin-top:8px;">
                 <input type="checkbox" id="cartAffirm">
-                <span>I confirm this is the worst cart UI I have seen and still want to continue.</span>
+                <span>I confirm my order details are correct.</span>
             </label>
-            <button class="misery-btn" id="cartContinueBtn" disabled>I survived cart, proceed to Step 3</button>
+            <button class="misery-btn" id="cartContinueBtn" disabled>Continue to Step 3</button>
         </div>
     </div>
 
-    <!-- STEP 4: ACCOUNT MISERY -->
+    <!-- STEP 4: ACCOUNT -->
     <div class="misery-overlay" id="accountOverlay">
         <div class="misery-card">
-            <h2>Step 4: Create Account</h2>
+            <h2>Step 4: Create Your Account</h2>
             <p>Please create an account through our form.</p>
             <div class="misery-grid">
                 <input class="misery-input misery-jitter" id="accName" placeholder="Username (at least 6 chars)">
@@ -912,7 +826,7 @@
                     <div class="misery-note" id="passwordStrength" style="position:absolute;top:-30px;left:0;width:100%;text-align:center;font-size:11px;"></div>
                 </div>
                 <input class="misery-input misery-jitter" id="accPass2" type="password" placeholder="Confirm password">
-                <input class="misery-input misery-jitter" id="accSuffering" placeholder="Type: I AGREE TO SUFFER">
+                <input class="misery-input misery-jitter" id="accSuffering" placeholder="Type: I AGREE TO TERMS">
             </div>
             <div class="misery-note" id="accountRules">
                 <div class="validation-checklist">
@@ -922,7 +836,7 @@
                     <div class="checklist-item" data-rule="passUgh">❌ Password contains "ugh"</div>
                     <div class="checklist-item" data-rule="passNumber">❌ Password contains at least one number</div>
                     <div class="checklist-item" data-rule="passMatch">❌ Passwords match</div>
-                    <div class="checklist-item" data-rule="suffering">❌ "I AGREE TO HIDDEN TERMS"</div>
+                    <div class="checklist-item" data-rule="suffering">❌ "I AGREE TO TERMS"</div>
                 </div>
             </div>
             <button class="misery-btn" id="accountContinueBtn" disabled>Account complete, move to Step 5</button>
@@ -932,8 +846,8 @@
     <!-- STEP 5: VERIFY AGAIN (NOT CAPTCHA) -->
     <div class="misery-overlay" id="verifyAgainOverlay">
         <div class="misery-card">
-            <h2>Step 5: Verify Again (because we can)</h2>
-            <p>We sent a 6-digit code to your email. It is shown below in tiny moving text.</p>
+            <h2>Step 5: Email Verification</h2>
+            <p>Please enter the verification code shown below.</p>
             <div class="misery-note" id="movingCodeHint">Code appears here shortly...</div>
             <div class="misery-flex" style="margin-top:10px;">
                 <input class="misery-input" id="verifyAgainInput" placeholder="Enter 6-digit code">
@@ -946,8 +860,8 @@
     <!-- STEP 6: FAKE PAYMENT -->
     <div class="misery-overlay" id="paymentOverlay">
         <div class="misery-card">
-            <h2>Step 6: Fake Payment Screen</h2>
-            <p>This is fake payment. No real charges. Still painful.</p>
+            <h2>Step 6: Payment Details</h2>
+            <p>Please enter your payment information below.</p>
             <div class="misery-grid">
                 <input class="misery-input misery-jitter" id="payCard" placeholder="Card number (16 digits)">
                 <input class="misery-input misery-jitter" id="payName" placeholder="Name on card">
@@ -965,18 +879,18 @@
                 <input type="checkbox" id="payFakeAgree">
                 <span>I understand this payment is fake and this costs a lot more mentally then from your wallet.</span>
             </label>
-            <button class="misery-btn" id="paymentSubmitBtn" disabled>Pretend To Pay And Go To Step 7</button>
+            <button class="misery-btn" id="paymentSubmitBtn" disabled>Complete Payment</button>
         </div>
     </div>
 
     <!-- STEP 7: FINAL FAILURE -->
     <div class="misery-overlay" id="finalOverlay">
         <div class="misery-card">
-            <h2>Step 7: One last CAPTCHA</h2>
-            <p>You are one click from fake success. Of course there is one final captcha.</p>
-            <button class="misery-btn" id="openFinalCaptchaBtn">Place Order Forever</button>
+            <h2>Step 7: Final Verification</h2>
+            <p>Please complete this final security check.</p>
+            <button class="misery-btn" id="openFinalCaptchaBtn">Place Order</button>
             <div id="finalFailureWall">
-                Final step policy: the last captcha always fails and restarts all progress.
+                Final step policy: all orders require this verification.
             </div>
         </div>
     </div>
@@ -1290,7 +1204,7 @@
 
         // --- 8. Nav Links - swap positions periodically ---
         const navAlerts = [
-            "This page is under construction. Since 2003.",
+            "This page is under construction. Since last week.",
             "Error 418: I'm a teapot.",
             "Access denied. Reason: We don't like you.",
             "Page moved to: http://www.example.com/nowhere",
@@ -1366,8 +1280,8 @@
                 const alternatives = [
                     "🔥 Yesterday's Leftovers 🔥",
                     "🔥 Overpriced Junk 🔥",
-                    "🔥 Please Buy Something 🔥",
-                    "🔥 CEO Needs a Yacht 🔥",
+                    "Please Buy Something",
+                    "CEO Needs a Yacht",
                     "🔥 Dave's Favorites 🔥"
                 ];
                 title.textContent = alternatives[Math.floor(Math.random() * alternatives.length)];
@@ -1551,18 +1465,18 @@
                 var isCorrect = false;
                 
                 if (round.type === "backwards") {
-                    var input = document.getElementById('backwardsInput');
-                    isCorrect = input && input.value.trim() === round.answer;
+                    var inputEl = document.getElementById('backwardsInput');
+                    isCorrect = inputEl && inputEl.value.trim() === round.answer;
                 } else if (round.type === "code") {
-                    var input = document.getElementById('codeInput');
-                    isCorrect = input && input.value.trim() === round.answer;
+                    var inputEl = document.getElementById('codeInput');
+                    isCorrect = inputEl && inputEl.value.trim() === round.answer;
                 } else if (round.type === "primes") {
-                    var selected = Array.from(document.querySelectorAll('.captcha-cell.selected')).map(c => c.textContent);
-                    isCorrect = round.answers.length === selected.length && round.answers.every(a => selected.includes(a));
+                    var selectedPrimes = Array.from(document.querySelectorAll('.captcha-cell.selected')).map(function(c) { return c.textContent; });
+                    isCorrect = round.answers.length === selectedPrimes.length && round.answers.every(function(a) { return selectedPrimes.includes(a); });
                 } else {
-                    var selected = Array.from(document.querySelectorAll('.captcha-cell.selected'));
+                    var selectedCells = Array.from(document.querySelectorAll('.captcha-cell.selected'));
                     if (round.answer) {
-                        isCorrect = selected.length === 1 && selected[0].textContent === round.answer;
+                        isCorrect = selectedCells.length === 1 && selectedCells[0].textContent === round.answer;
                     }
                 }
 
@@ -1605,7 +1519,7 @@
                 "ShopMart™ may or may not exist. This is not a guarantee of anything.",
                 "You waive all rights to a pleasant browsing experience, now and forever.",
                 "Any attempt to understand these terms constitutes a violation of these terms.",
-                "ShopMart™ operates in a quantum state: simultaneously the best and worst website.",
+                "ShopMart™ operates in a quantum state: simultaneously functional and experimental.",
                 "These terms are binding in all jurisdictions, including fictional ones.",
                 "ShopMart™ reserves the right to add more terms while you're reading these terms."
             ];
@@ -1843,7 +1757,7 @@
 
         // E. Selection prevention
         document.addEventListener('selectstart', function() { 
-            showToast("📋 Copying is not allowed. Please type everything manually."); 
+            showToast("📋 Copying is disabled for security."); 
         });
 
         // F. Idle detection
@@ -1934,6 +1848,7 @@
             return String(text || '').replace(/\D/g, '');
         }
 
+        /* Case glitch input - occasional case switching */
         function randomCaseGlitch(e) {
             var val = e.target.value;
             if (!val || Math.random() < 0.60) return; // 40% chance of glitch (was 45%)
@@ -2043,7 +1958,7 @@
 
         function openCartStep() {
             if (state.cart.length < 3) {
-                if (typeof showToast === 'function') showToast('Need 3 items before entering cart misery.');
+                if (typeof showToast === 'function') showToast('Need 3 items before entering cart.');
                 return;
             }
             closeAllOverlays();
@@ -2123,7 +2038,7 @@
                     if (timer) timer.textContent = 'TIME\'S UP!';
                     // Time out - retry the same round
                     var attemptsEl = document.getElementById('captchaAttempts');
-                    if (attemptsEl) attemptsEl.textContent = 'Time expired! Try again. Misery is mandatory.';
+                    if (attemptsEl) attemptsEl.textContent = 'Time expired! Try again.';
                     setTimeout(function() {
                         renderCaptchaRound(); // retry same round
                     }, 1500);
@@ -2232,14 +2147,14 @@
             }
             
             if (!ok) {
-                if (attempts) attempts.textContent = 'Wrong tiles. Try again. Misery is mandatory.';
+                if (attempts) attempts.textContent = 'Wrong tiles. Try again.';
                 renderCaptchaRound();
                 return;
             }
 
             state.captchaRound++;
             if (state.captchaMode === 'step3' && state.captchaRound < captchaRounds.length) {
-                if (attempts) attempts.textContent = 'One more round because we do not trust you.';
+                if (attempts) attempts.textContent = 'One more round because we need more verification.';
                 renderCaptchaRound();
                 return;
             }
@@ -2251,16 +2166,16 @@
                 state.unlocked = Math.max(state.unlocked, 4);
                 setProgress(4);
                 if (overlays.account) overlays.account.classList.add('active');
-                if (typeof showToast === 'function') showToast('Step 3 completed. Account pain unlocked.');
+                if (typeof showToast === 'function') showToast('Step 3 completed. Account is ready.');
                 return;
             }
 
             if (state.captchaMode === 'final') {
                 var finalAttempts = document.getElementById('captchaAttempts');
-                if (finalAttempts) finalAttempts.textContent = 'Captcha accepted. Rechecking...';
+                if (finalAttempts) finalAttempts.textContent = 'Captcha accepted. Processing order...';
                 if (captchaTimerInterval) clearInterval(captchaTimerInterval);
                 setTimeout(function() {
-                    if (typeof showToast === 'function') showToast('Final captcha failed for mysterious reasons. Restarting everything.');
+                    if (typeof showToast === 'function') showToast('Captcha accepted. Verifying...');
                     hardResetJourney();
                 }, 1400);
             }
@@ -2322,7 +2237,7 @@
             
             var emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value);
             // Case-insensitive suffering phrase
-            var phraseOk = phrase.value.trim().toLowerCase() === 'i agree to suffer';
+            var phraseOk = phrase.value.trim().toLowerCase() === 'i agree to terms';
             // Case-insensitive password matching
             var passMatchOk = pass.value.toLowerCase() === pass2.value.toLowerCase() && passVal.length > 0;
             var ok = name.value.trim().length === 8 && emailOk && passOk && passMatchOk && phraseOk;
@@ -2432,7 +2347,7 @@
             if (tip) tip.value = '12';
             var tipVal = document.getElementById('warehouseTipVal');
             if (tipVal) tipVal.textContent = '12';
-            if (typeof showToast === 'function') showToast('Restarted to Step 1. Please suffer through all 7 steps again.');
+            if (typeof showToast === 'function') showToast('Restarted to Step 1. Please complete all 7 steps again.');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -2441,7 +2356,7 @@
                 stepEl.addEventListener('click', function() {
                     var target = Number(stepEl.getAttribute('data-step'));
                     if (!canNavigateToStep(target)) {
-                        if (typeof showToast === 'function') showToast('That step is locked. Suffer through previous steps first.');
+                        if (typeof showToast === 'function') showToast('That step is locked. Complete previous steps first.');
                         return;
                     }
                     if (target === 1) {
@@ -2481,7 +2396,7 @@
                         setProgress(7);
                         return;
                     }
-                    if (typeof showToast === 'function') showToast('Reach step ' + target + ' by completing current misery first.');
+                    if (typeof showToast === 'function') showToast('Reach step ' + target + ' by completing the current step first.');
                 });
             });
 
@@ -2537,7 +2452,7 @@
             });
             if (verifyContinue) verifyContinue.addEventListener('click', function() {
                 if (!verifyInput || verifyInput.value.trim() !== state.finalCode) {
-                    if (typeof showToast === 'function') showToast('Wrong code. Read the moving text carefully.');
+                    if (typeof showToast === 'function') showToast('Wrong code. Please try again.');
                     return;
                 }
                 if (overlays.verifyAgain) overlays.verifyAgain.classList.remove('active');
@@ -2596,7 +2511,7 @@
         window.showCaptcha = function() {
             if (state.step === 3) openCaptchaFor('step3');
             else if (state.step === 7) openCaptchaFor('final');
-            else if (typeof showToast === 'function') showToast('this was a weird error done by the AI, its changed now.');
+            else openCaptchaFor('step3');
         };
 
         setInterval(hardSetCartCount, 800);
