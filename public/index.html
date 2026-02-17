@@ -1168,10 +1168,7 @@
         document.getElementById('newsletterSubmit')?.addEventListener('click', () => {
             showToast('✅ Subscribed! Check your inbox for 847 welcome emails.');
             const popup = document.getElementById('newsletterPopup');
-            const h2 = popup?.querySelector('h2'); const p = popup?.querySelector('p');
-            if (h2) h2.textContent = 'One More Thing...';
-            if (p) p.textContent = 'Now verify your email by solving a captcha.';
-            setTimeout(() => { popup.style.display = 'none'; if (typeof showCaptcha === 'function') showCaptcha(); }, 2000);
+            if (popup) popup.style.display = 'none';
         });
 
         // --- 7. Search Bar - text changes as you type ---
